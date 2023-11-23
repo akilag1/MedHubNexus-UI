@@ -17,6 +17,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
+import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
+import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
+import { PharmacyThumbnailComponent } from './thumbnails/pharmacy-thumbnail/pharmacy-thumbnail.component';
+import { SearchComponent } from './search/search.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { MedicinePageComponent } from './medicine-page/medicine-page.component';
     ContactComponent,
     LoginPageComponent,
     AdminLoginPageComponent,
-    MedicinePageComponent
+    MedicinePageComponent,
+    PharmacyPageComponent,
+    MedicineThumbnailComponent,
+    PharmacyThumbnailComponent,
+    SearchComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

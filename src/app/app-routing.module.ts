@@ -6,6 +6,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminLoginPageComponent } from './login-page/admin-login-page/admin-login-page.component';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
+import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 
 const routes: Routes = [
 
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'about', component: AboutPageComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'admin-login', component: AdminLoginPageComponent },
-  { path: 'medicine', component: MedicinePageComponent }
+  { path: 'medicine', component: MedicinePageComponent },
+  { path: 'pharmacy', component: PharmacyPageComponent },
+  { path: '**', component: HomePageComponent}
 
 ];
 

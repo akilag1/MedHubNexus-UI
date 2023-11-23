@@ -124,11 +124,11 @@
 }
 
 .health_section .owl-carousel .owl-nav.disabled .owl-prev {
-  background-image: url(/assets/images/prev.png);
+  background-image: url(/assets//images/prev.png);
   right: 95px;
 }
 
 .health_section .owl-carousel .owl-nav.disabled .owl-next {
-  background-image: url(/assets/images/next.png);
+  background-image: url(/assets//images/next.png);
   right: 35px;
 }
