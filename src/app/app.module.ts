@@ -16,12 +16,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
 import { PharmacyThumbnailComponent } from './thumbnails/pharmacy-thumbnail/pharmacy-thumbnail.component';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
+import { PharmacyDashboardComponent } from './dashboards/pharmacy-dashboard/pharmacy-dashboard.component';
+import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { FilterComponent } from './filter/filter.component';
     MedicineThumbnailComponent,
     PharmacyThumbnailComponent,
     SearchComponent,
-    FilterComponent
+    FilterComponent,
+    PharmacyDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +54,8 @@ import { FilterComponent } from './filter/filter.component';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
+    MatMenuModule,
+    MatListModule,
     FormsModule
   ],
   providers: [],

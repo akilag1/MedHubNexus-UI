@@ -187,3 +187,12 @@ a:focus {
   background-image: url(/assets/images/menu.png);
   background-size: 42px;
 }
+
+/* profile-dropdown */
+.profile-dropdown img{
+  border-radius: 50%;
+}
+
+.profile-dropdown .profile_menu p{
+  text-align: center;
+}
