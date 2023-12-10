@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginPageComponent } from './login-page.component';
+import { DashHomeBoxComponent } from './dash-home-box.component';
 
-describe('LoginPageComponent', () => {
-  let component: LoginPageComponent;
-  let fixture: ComponentFixture<LoginPageComponent>;
+describe('PharmacyDashHomeBoxComponent', () => {
+  let component: DashHomeBoxComponent;
+  let fixture: ComponentFixture<DashHomeBoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginPageComponent ]
+      declarations: [ DashHomeBoxComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LoginPageComponent);
+    fixture = TestBed.createComponent(DashHomeBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

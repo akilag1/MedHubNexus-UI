@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginPageComponent } from './login-page/login-page.component';
 import { AdminLoginPageComponent } from './login-page/admin-login-page/admin-login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
@@ -26,6 +26,13 @@ import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
 import { PharmacyDashboardComponent } from './dashboards/pharmacy-dashboard/pharmacy-dashboard.component';
 import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dashboard.component';
+import { UserLoginPageComponent } from './login-page/user-login-page/user-login-page.component';
+import { PharmacyDashHomeComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-home/pharmacy-dash-home.component';
+import { PharmacyDashOrdersComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-orders/pharmacy-dash-orders.component';
+import { DashHomeBoxComponent } from './dashboards/common/dash-home-box/dash-home-box.component';
+import { AdminDashHomeComponent } from './dashboards/admin-dashboard/admin-dash-home/admin-dash-home.component';
+import { AdminDashCustomersComponent } from './dashboards/admin-dashboard/admin-dash-customers/admin-dash-customers.component';
+import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-dash-requests/admin-dash-requests.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +42,6 @@ import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dash
     FooterComponent,
     AboutPageComponent,
     ContactComponent,
-    LoginPageComponent,
     AdminLoginPageComponent,
     MedicinePageComponent,
     PharmacyPageComponent,
@@ -44,7 +50,14 @@ import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dash
     SearchComponent,
     FilterComponent,
     PharmacyDashboardComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    UserLoginPageComponent,
+    PharmacyDashHomeComponent,
+    PharmacyDashOrdersComponent,
+    DashHomeBoxComponent,
+    AdminDashHomeComponent,
+    AdminDashCustomersComponent,
+    AdminDashRequestsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +69,7 @@ import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dash
     MatFormFieldModule,
     MatMenuModule,
     MatListModule,
+    MatDialogModule,
     FormsModule
   ],
   providers: [],

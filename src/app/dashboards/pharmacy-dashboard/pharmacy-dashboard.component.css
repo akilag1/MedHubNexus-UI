@@ -1,7 +1,23 @@
 .container {
     display: flex;
     height: 100vh;
+    margin: 0;
+    padding: 0;
   }
+
+  .user_details{
+    margin-bottom: 20px;
+  }
+  
+  .user_details img{
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+  
+  mat-list-item:hover{
+    background-color: rgb(228, 207, 89);
+    border-radius: 10px;
+  }  
 
   .menu {
     flex: 1;

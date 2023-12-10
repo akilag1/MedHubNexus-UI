@@ -3,19 +3,21 @@
     <!-- Left column for menu items -->
     <div class="menu">
       <!-- Add your menu items here -->
+      <div class="user_details">
+        <img width="150" height="150" src="../../assets/images/pharmacy1.jpg" alt="Pharmacy_picture">
+        <h3>Hello Pharmacy!</h3>
+      </div>
       <mat-list>
-        <mat-list-item>Menu Item 1</mat-list-item>
-        <mat-list-item>Menu Item 2</mat-list-item>
-        <mat-list-item>Menu Item 3</mat-list-item>
-        <!-- Add more items as needed -->
+        <mat-list-item>HOME</mat-list-item>
+        <mat-list-item>ORDERS</mat-list-item>
+        <mat-list-item>LISTINGS</mat-list-item>
       </mat-list>
     </div>
 
     <!-- Right column for content -->
     <div class="content">
-      <!-- Add your content here -->
-      <h2>Content Area</h2>
-      <p>This is the main content area.</p>
+      <h2>HOME</h2>
+      <app-pharmacy-dash-home></app-pharmacy-dash-home>
     </div>
   </div>
 <app-footer></app-footer>

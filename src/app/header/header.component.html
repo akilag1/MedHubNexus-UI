@@ -55,15 +55,15 @@
                 <input type="search" placeholder="Search">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
-              <!-- <div class="login_btn-contanier ml-0 ml-lg-5">
-                <a href="">
+              <div class="login_btn-contanier ml-0 ml-lg-5">
+                <a (click)="onLogBtnPressed()">
                   <img src="/assets/images/user.png" alt="">
                   <span>
-                    Login
+                    Login/Register
                   </span>
                 </a>
-              </div> -->
-              <div class="profile-dropdown">
+              </div>
+              <!-- <div class="profile-dropdown">
                 <img width="40" height="40" src="/assets/images/user2.jpg" [matMenuTriggerFor]="profile_menu">
                 <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
                   <p>Hi Akila</p>
@@ -71,7 +71,7 @@
                   <button mat-menu-item>Orders</button>
                   <button mat-menu-item>Sign Out</button>
                 </mat-menu>
-              </div>
+              </div> -->
             </div>
           </div>
 

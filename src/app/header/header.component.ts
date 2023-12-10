@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UserLoginPageComponent } from '../login-page/user-login-page/user-login-page.component';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     console.log("Header started")
+  }
+
+  onLogBtnPressed(){
+    const dialogRef = this.dialog.open(UserLoginPageComponent, {
+      height: '450px',
+      width: '800px',
+    });
   }
 
 }
