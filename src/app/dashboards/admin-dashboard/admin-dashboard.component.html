@@ -4,22 +4,24 @@
     <div class="menu">
       <!-- Add your menu items here -->
       <div class="user_details">
-        <img width="150" height="150" src="../../assets/images/user1.png" alt="admin_picture">
-        <h3>Hello Admin!</h3>
+        <img width="150" height="150" src="../../assets/images/admin_dp.jpg" alt="admin_picture">
+        <h3>Hello</h3>
+        <h3>{{adminName}}!</h3>
       </div>
+      <hr>
       <mat-list>
-        <mat-list-item>HOME</mat-list-item>
-        <mat-list-item>CUSTOMERS</mat-list-item>
-        <mat-list-item>PHARMACIES</mat-list-item>
-        <mat-list-item>REQUESTS</mat-list-item>
+        <mat-list-item routerLink="/admin-dashboard" (click)="onClickList($event.target)">HOME</mat-list-item>
+        <mat-list-item routerLink="/admin-dashboard/customers" (click)="onClickList($event.target)">CUSTOMERS</mat-list-item>
+        <mat-list-item routerLink="/admin-dashboard/pharmacies" (click)="onClickList($event.target)">PHARMACIES</mat-list-item>
+        <mat-list-item routerLink="/admin-dashboard/requests" (click)="onClickList($event.target)">REQUESTS</mat-list-item>
       </mat-list>
     </div>
 
     <!-- Right column for content -->
     <div class="content">
-      <!-- Add your content here -->
-      <h2>Content Area</h2>
-      <p>This is the main content area.</p>
+      <h2>{{pageTitle}}</h2>
+      <hr>
+      <router-outlet></router-outlet>
     </div>
   </div>
 <app-footer></app-footer>

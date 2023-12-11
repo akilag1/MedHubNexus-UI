@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
+  public adminName:string = "Admin"
+  public pageTitle:string = "HOME";
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClickList(value:any){
+    this.pageTitle = value['textContent'];
   }
 
 }

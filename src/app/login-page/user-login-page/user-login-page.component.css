@@ -1,8 +1,9 @@
 .container {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    background-color: #f0f0f0;
   }
 
 .user_details{
@@ -30,4 +31,18 @@ mat-list-item:hover{
     flex: 3;
     background-color: #f0f0f0;
     padding: 16px;
+    height:400px
   }
+
+.header{
+  margin-bottom: 15px;
+  background: #c1c1c1;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.header img{
+  margin-right: 5px;
+}

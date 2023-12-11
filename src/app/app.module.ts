@@ -18,6 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
@@ -33,6 +35,8 @@ import { DashHomeBoxComponent } from './dashboards/common/dash-home-box/dash-hom
 import { AdminDashHomeComponent } from './dashboards/admin-dashboard/admin-dash-home/admin-dash-home.component';
 import { AdminDashCustomersComponent } from './dashboards/admin-dashboard/admin-dash-customers/admin-dash-customers.component';
 import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-dash-requests/admin-dash-requests.component';
+import { AdminDashPharmaciesComponent } from './dashboards/admin-dashboard/admin-dash-pharmacies/admin-dash-pharmacies.component';
+import { PharmacyDashListingsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-listings/pharmacy-dash-listings.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,9 @@ import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-d
     DashHomeBoxComponent,
     AdminDashHomeComponent,
     AdminDashCustomersComponent,
-    AdminDashRequestsComponent
+    AdminDashRequestsComponent,
+    AdminDashPharmaciesComponent,
+    PharmacyDashListingsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +76,8 @@ import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-d
     MatMenuModule,
     MatListModule,
     MatDialogModule,
+    MatGridListModule,
+    MatIconModule,
     FormsModule
   ],
   providers: [],

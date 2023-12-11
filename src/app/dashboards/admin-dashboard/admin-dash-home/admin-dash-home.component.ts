@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashHomeComponent implements OnInit {
 
+  public boxTitle1 = "REQUESTS"
+  public boxTitle2 = "INBOX"
+  public boxTitle3 = "PHARMACIES"
+  public boxTitle4 = "CUSTOMERS"
+  public boxTitle5 = "LISTINGS"
+
   constructor() { }
 
   ngOnInit(): void {
