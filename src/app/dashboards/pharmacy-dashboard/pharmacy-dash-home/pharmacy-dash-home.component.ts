@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacyDashHomeComponent implements OnInit {
 
+  public boxTitle1 = "ORDERS"
+  public boxTitle2 = "INBOX"
+  public boxTitle3 = "LISTINGS"
+  public boxTitle4 = "OUT OF STOCK"
+
   constructor() { }
 
   ngOnInit(): void {

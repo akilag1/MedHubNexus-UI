@@ -13,6 +13,14 @@ export class PharmacyDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    const currentPath = window.location.pathname;
+    const pathParts = currentPath.split('/');
+    const lastPart = pathParts.pop();
+    if(lastPart!=undefined && pathParts.length>1){
+      this.pageTitle = lastPart.toUpperCase();
+    }
+
   }
 
   onClickList(value:any){

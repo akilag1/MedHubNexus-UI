@@ -1,5 +1,6 @@
 .owl-carousel{
     display: flex;
+    justify-content: space-between;
 }
 
 .health_section .health_carousel-container {

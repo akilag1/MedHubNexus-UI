@@ -197,3 +197,11 @@ a:focus {
 .profile-dropdown .profile_menu p{
   text-align: center;
 }
+
+log-reg-container{
+  z-index: 2;
+}
+
+prescription-btn{
+  z-index: 1;
+}

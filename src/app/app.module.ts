@@ -10,7 +10,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminLoginPageComponent } from './login-page/admin-login-page/admin-login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
@@ -37,6 +38,8 @@ import { AdminDashCustomersComponent } from './dashboards/admin-dashboard/admin-
 import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-dash-requests/admin-dash-requests.component';
 import { AdminDashPharmaciesComponent } from './dashboards/admin-dashboard/admin-dash-pharmacies/admin-dash-pharmacies.component';
 import { PharmacyDashListingsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-listings/pharmacy-dash-listings.component';
+import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
+import { ImageBoxComponent } from './medicine-detail/image-box/image-box.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { PharmacyDashListingsComponent } from './dashboards/pharmacy-dashboard/p
     AdminDashCustomersComponent,
     AdminDashRequestsComponent,
     AdminDashPharmaciesComponent,
-    PharmacyDashListingsComponent
+    PharmacyDashListingsComponent,
+    MedicineDetailComponent,
+    ImageBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +83,9 @@ import { PharmacyDashListingsComponent } from './dashboards/pharmacy-dashboard/p
     MatDialogModule,
     MatGridListModule,
     MatIconModule,
-    FormsModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

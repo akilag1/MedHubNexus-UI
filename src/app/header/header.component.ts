@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(UserLoginPageComponent, {
       height: '450px',
       width: '650px',
+      panelClass: 'log-reg-container',
+      autoFocus: false
     });
   }
 

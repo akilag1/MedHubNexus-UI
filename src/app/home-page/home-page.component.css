@@ -1,5 +1,6 @@
 .owl-carousel{
     display: flex;
+    justify-content: space-between;
 }
 
 .hero_area {

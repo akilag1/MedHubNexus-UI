@@ -1,0 +1,25 @@
+/* Custom styling for the search bar */
+mat-form-field {
+    width: 200px;
+    margin-right: 20px;
+}
+
+mat-select,
+input {
+    background-color: #f0f5f5;
+    /* Ash Blue background */
+}
+
+button {
+    background-color: #ff8c00;
+    /* Orange button */
+    color: #fff;
+    /* White text */
+}
+
+button:hover {
+    background-color: #e07d00;
+    /* Darker orange on hover */
+}
+
+/* Add more styles as needed */

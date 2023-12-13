@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DashHomeBoxComponent implements OnInit {
 
   @Input('boxTitle') boxTitle:string = "";
-  @Input('boxValue') boxValue:number = 0;
+  @Input('boxValue') boxValue:number = 10;
 
   constructor() { }
 
