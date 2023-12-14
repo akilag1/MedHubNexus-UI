@@ -22,4 +22,6 @@ button:hover {
     /* Darker orange on hover */
 }
 
-/* Add more styles as needed */
+mat-card mat-card-content{
+    text-align: center;
+}

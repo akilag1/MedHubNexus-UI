@@ -404,3 +404,7 @@
 .client_section .carousel-indicators li.active::before {
   display: none;
 }
+
+.see-more-btn{
+  margin-bottom: 40px;
+}

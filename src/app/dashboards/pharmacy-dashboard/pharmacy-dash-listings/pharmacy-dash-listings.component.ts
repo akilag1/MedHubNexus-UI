@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacyDashListingsComponent implements OnInit {
 
+  public records: [] = [];
+  public showProgressbar: boolean = false;
+  public totalCount: number = 1;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onPageChange(event: any) {
+
+    this.records = [];
+    // this.showProgressbar =true;
+    const pageIndex = event.pageIndex;
+    const pageSize = event.pageSize;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+    let fullPayLoad = {
+      "page": pageIndex,
+      "size": pageSize
+    }
   }
 
 }

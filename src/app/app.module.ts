@@ -21,6 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
@@ -84,6 +88,10 @@ import { ImageBoxComponent } from './medicine-detail/image-box/image-box.compone
     MatGridListModule,
     MatIconModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
+    MatButtonToggleModule,
+    MatPaginatorModule,
+    MatTooltipModule,
     FormsModule,
     ReactiveFormsModule
   ],

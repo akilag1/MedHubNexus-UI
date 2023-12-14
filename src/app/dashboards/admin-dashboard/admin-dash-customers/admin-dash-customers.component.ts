@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashCustomersComponent implements OnInit {
 
-  constructor() { }
+  public customers:string[]=[]
+
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
   }

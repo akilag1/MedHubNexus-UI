@@ -1,12 +1,26 @@
-<section class="health_section layout_padding">
-    <div class="health_carousel-container">
-        <div class="carousel-wrap layout_padding2">
-            <div class="owl-carousel owl-2">
-                <app-medicine-thumbnail></app-medicine-thumbnail>
-                <app-medicine-thumbnail></app-medicine-thumbnail>
-                <app-medicine-thumbnail></app-medicine-thumbnail>
-                <app-medicine-thumbnail></app-medicine-thumbnail>
-            </div>
-        </div>
-    </div>
-</section>
+
+<div>
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th>MEDICINE ID</th>
+                <th>MEDICINE NAME</th>
+                <th>QUANTITY</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>111</td>
+                <td>Asprin</td>
+                <td>10/50</td>
+                <td>Shipped</td>
+                <td><img src="../../assets/icons/more-info1.png" alt="more-info" width="50px" height="50px"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
+        <mat-paginator [length]="totalCount" [pageSizeOptions]="[5, 10, 25, 50, 100]"
+          showFirstLastButtons (page)="onPageChange($event)"></mat-paginator>
+</div>

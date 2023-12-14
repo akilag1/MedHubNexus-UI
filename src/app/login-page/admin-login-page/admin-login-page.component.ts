@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login-page',
@@ -13,8 +13,8 @@ export class AdminLoginPageComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {
 
     this.adminLoginGroup = this._formBuilder.group({
-      'userName': '',
-      'password': ''
+      'userName': ['', Validators.required],
+      'passWord': ['', Validators.required]
     });
 
    }

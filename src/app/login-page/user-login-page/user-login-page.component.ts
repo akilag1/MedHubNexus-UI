@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-login-page',
@@ -8,25 +8,32 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class UserLoginPageComponent implements OnInit {
 
-  public loginGroup: FormGroup;
-  public registerGroup: FormGroup;
+  public loginFormGroup: FormGroup;
+  public registerFormGroup: FormGroup;
+  public showProgressBar = true;
+  public userTypeControl = new FormControl('customer');
 
   constructor(private _formBuilder: FormBuilder) { 
 
-    this.loginGroup = this._formBuilder.group({
-      'userName': '',
-      'passWord': ''
+    this.loginFormGroup = this._formBuilder.group({
+      'userName': ['', Validators.required],
+      'passWord': ['', Validators.required]
     });
 
-    this.registerGroup = this._formBuilder.group({
-      'userName': '',
-      'email': '',
-      'password': '',
+    this.registerFormGroup = this._formBuilder.group({
+      'userName': ['', Validators.required],
+      'email': ['', [Validators.required, Validators.email]],
+      'passWord': ['', Validators.required],
     })
 
   }
 
   ngOnInit(): void {
+  }
+
+  onLoginSubmit(){
+    console.log(this.loginFormGroup.value);
+    console.log(this.userTypeControl.value);
   }
 
 }

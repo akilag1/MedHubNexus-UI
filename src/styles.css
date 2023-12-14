@@ -54,6 +54,10 @@ body {
   background-color: #10e7f4;
 }
 
+.log-reg-container .mat-dialog-container {
+  overflow: hidden;
+}
+
 
 
 html, body { height: 100%; }

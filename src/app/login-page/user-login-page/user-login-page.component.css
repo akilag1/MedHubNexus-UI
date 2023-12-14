@@ -4,6 +4,7 @@
     margin: 0;
     padding: 10px;
     background-color: #f0f0f0;
+    height: 325px;
   }
 
 .user_details{
@@ -31,7 +32,7 @@ mat-list-item:hover{
     flex: 3;
     background-color: #f0f0f0;
     padding: 16px;
-    height:400px
+    /* height:400px */
   }
 
 .header{
@@ -45,4 +46,13 @@ mat-list-item:hover{
 
 .header img{
   margin-right: 5px;
+}
+
+.spinner{
+  margin-top: 15px;
+  display: flex;
+}
+
+.spinner span{
+  margin-left: 5px;
 }
