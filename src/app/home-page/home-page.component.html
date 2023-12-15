@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="hero_area">
    <!-- slider section -->
     <section class=" slider_section position-relative">
@@ -19,16 +20,14 @@
                 <div class="col-md-8">
                   <div class="detail-box">
                     <h1>
-                      Welcome To Our <br>
+                      Welcome To <br>
                       <span>
-                        Online Medicine
+                        MedHubNexus
                       </span>
 
                     </h1>
                     <p>
-                      There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised words which don't look even slightly
-                      believable.
+                      Discover a new era in pharmacy management and medication access with MedHubNexus! Say goodbye to delays and hello to efficiency. Find medicines in seconds, enjoy rapid prescription processing, and secure online purchases.
                     </p>
                     <div>
                       <a href="">
@@ -324,7 +323,7 @@
       </h2>
       <div class="carousel-wrap layout_padding2">
         <div class="owl-carousel">
-          <div class="item">
+          <!-- <div class="item">
             <div class="box">
               <div class="btn_container">
                 <a href="">
@@ -579,19 +578,26 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+          <app-medicine-thumbnail></app-medicine-thumbnail>
+          <app-medicine-thumbnail></app-medicine-thumbnail>
+          <app-medicine-thumbnail></app-medicine-thumbnail>
+          <app-medicine-thumbnail></app-medicine-thumbnail>
         </div>
       </div>
+    </div>
+    <div class="d-flex justify-content-center see-more-btn">
+      <a routerLink="/medicine">
+        See more
+      </a>
     </div>
     <div class="health_carousel-container">
       <h2 class="text-uppercase">
         Vitamins & Supplements
-
-
       </h2>
       <div class="carousel-wrap layout_padding2">
         <div class="owl-carousel owl-2">
-          <div class="item">
+          <!-- <div class="item">
             <div class="box">
               <div class="btn_container">
                 <a href="">
@@ -722,12 +728,16 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+          <app-pharmacy-thumbnail></app-pharmacy-thumbnail>
+          <app-pharmacy-thumbnail></app-pharmacy-thumbnail>
+          <app-pharmacy-thumbnail></app-pharmacy-thumbnail>
+          <app-pharmacy-thumbnail></app-pharmacy-thumbnail>
         </div>
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <a href="">
+      <a routerLink="/pharmacy">
         See more
       </a>
     </div>
@@ -837,6 +847,7 @@
     </div>
   </section>
   <!-- end client section -->
+  <app-footer></app-footer>
 
    <script type="text/javascript">
     $(".owl-carousel").owlCarousel({

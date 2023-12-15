@@ -1,0 +1,24 @@
+<app-header></app-header>
+<mat-card class="login-card">
+  <img src="/assets/images/logo.png" alt="" />
+  <span> MedHubNexus </span>
+  <mat-card-header>
+    <mat-card-title>Admin Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="adminLoginGroup">
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input formControlName="userName" matInput placeholder="Enter your username" name="username" required autofocus />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input formControlName="passWord" matInput type="password" placeholder="Enter your password" name="password"
+          required />
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="login-button" [disabled]="adminLoginGroup.invalid">
+        Login
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

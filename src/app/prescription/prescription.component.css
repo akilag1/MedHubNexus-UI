@@ -1,0 +1,20 @@
+.file-upload-container {
+    margin-bottom: 20px;
+  }
+  
+  .drag-drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  

@@ -1,7 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #f0efef;
 }
 
 .layout_padding {
@@ -54,4 +54,11 @@ body {
   background-color: #10e7f4;
 }
 
+.log-reg-container .mat-dialog-container {
+  overflow: hidden;
+}
 
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

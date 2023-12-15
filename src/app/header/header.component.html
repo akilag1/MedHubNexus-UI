@@ -21,7 +21,7 @@
       </div>
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" routerLink="">
             <img src="/assets/images/logo.png" alt="">
             <span>
               MedHubNexus
@@ -39,29 +39,41 @@
                   <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about"> Medicine </a>
+                  <a class="nav-link" routerLink="/medicine"> Medicine </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="medicine.html"> Pharmacies </a>
+                  <a class="nav-link" routerLink="/pharmacy"> Pharmacies </a>
                 </li>
-                <li class="nav-item" routerLinkActive="is-active">
+                <li class="nav-item">
                   <a class="nav-link" routerLink="/about"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" routerLink="/contact">Contact us</a>
                 </li>
               </ul>
-              <form class="form-inline ">
-                <input type="search" placeholder="Search">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
-              <div class="login_btn-contanier ml-0 ml-lg-5">
-                <a href="">
+              <div class="prescription-btn">
+                <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
+              </div>
+              <!-- <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()">
+                <a >
                   <img src="/assets/images/user.png" alt="">
                   <span>
-                    Login
+                    Login/Register
                   </span>
                 </a>
+              </div> -->
+              <div>
+                <img src="/assets/images/cart1.png" alt="cart">
+                <!-- <p>Add to Cart</p> -->
+              </div>
+              <div class="profile-dropdown">
+                <img width="40" height="40" src="/assets/images/user3.jpg" [matMenuTriggerFor]="profile_menu">
+                <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
+                  <p style="padding-left: 16px;">Hi Akila</p>
+                  <button mat-menu-item routerLink="customer-dashboard">Profile</button>
+                  <button mat-menu-item routerLink="customer-dashboard/orders">Orders</button>
+                  <button mat-menu-item>Sign Out</button>
+                </mat-menu>
               </div>
             </div>
           </div>

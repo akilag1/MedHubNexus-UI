@@ -1,0 +1,55 @@
+<form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit()">
+    <!-- File Select and Drag & Drop -->
+    <div class="file-upload-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <label for="file">File Select</label>
+      <input type="file" id="file" formControlName="file" />
+      <div class="drag-drop-area" cdkDropList (cdkDropListDropped)="onFileDrop($event)">
+        <p>Drag & Drop files here</p>
+      </div>
+    </div>
+  
+    <!-- Other Form Fields -->
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Contact No" formControlName="contactNo" />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address" />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Duration" formControlName="duration" />
+      </mat-form-field>
+  
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+  
+      <mat-radio-group formControlName="medicineAllergies">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+  
+      <!-- <mat-form-field *ngIf="prescriptionForm.get('medicineAllergies').value === 'yes'">
+        <input matInput placeholder="Describe Allergies" formControlName="allergiesDescription" />
+      </mat-form-field> -->
+  
+      <mat-form-field>
+        <textarea matInput placeholder="Special Notes" formControlName="specialNotes"></textarea>
+      </mat-form-field>
+    </div>
+  
+    <!-- Submit Button -->
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+  

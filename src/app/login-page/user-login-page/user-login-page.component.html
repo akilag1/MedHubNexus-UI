@@ -1,0 +1,75 @@
+<div class="header">
+  <img src="/assets/images/logo.png" alt="log/reg form" />
+  <span>MEDHUBNEXUS LOGIN/REGISTER</span>
+</div>
+<div>
+  <p>
+    Select Type:&nbsp; 
+    <mat-button-toggle-group [formControl]="userTypeControl" name="userType" aria-label="user type" value="customer">
+      <mat-button-toggle value="customer">Customer</mat-button-toggle>
+      <mat-button-toggle value="pharmacy">Pharmacy</mat-button-toggle>
+    </mat-button-toggle-group>
+  </p>
+</div>
+<div class="container">
+  <div class="content">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="loginFormGroup" (ngSubmit)="onLoginSubmit()">
+          <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input formControlName="userName" matInput placeholder="Enter your username" name="username" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="passWord" matInput type="password" placeholder="Enter your password" name="password"
+              required />
+          </mat-form-field>
+          <button mat-raised-button color="primary" class="login-button" [disabled]="loginFormGroup.invalid">
+            Login
+          </button>
+          <div *ngIf="showProgressBar" class="spinner">
+            <mat-spinner [diameter]="20"></mat-spinner><span>Logging In</span>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="border-left:1px solid rgba(0,0,0,.1);height:400px"></div>
+
+  <!-- Right column for content -->
+  <div class="content">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="registerFormGroup">
+          <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input formControlName="userName" matInput placeholder="Enter your username" name="username" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="email" placeholder="Enter your email" name="email" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="passWord" matInput type="password" placeholder="Enter your password" name="password"
+              required />
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="onRegBtnPressed()" class="login-button" [disabled]="registerFormGroup.invalid">
+            REGISTER
+          </button>
+          <div *ngIf="showProgressBar" class="spinner">
+            <mat-spinner [diameter]="20"></mat-spinner><span>Registering</span>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

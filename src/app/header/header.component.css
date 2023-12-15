@@ -124,6 +124,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   font-family: 'Roboto', sans-serif;
+  cursor: pointer;
 }
 
 .login_btn-contanier a img {
@@ -152,7 +153,7 @@ a:focus {
 }
 
 .custom_nav-container {
-  z-index: 99999;
+  /* z-index: 99999; */
   padding: 10px 0;
 }
 
@@ -186,4 +187,9 @@ a:focus {
 .custom_nav-container .navbar-toggler .navbar-toggler-icon {
   background-image: url(/assets/images/menu.png);
   background-size: 42px;
+}
+
+/* profile-dropdown */
+.profile-dropdown img{
+  border-radius: 50%;
 }

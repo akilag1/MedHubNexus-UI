@@ -1,0 +1,66 @@
+.style-icon {
+    margin-top: 12px;
+  }
+  
+  .mat-card {
+    padding: 10px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    text-align: left;
+  }
+  
+  ::ng-deep .mat-card-header-text {
+    margin: 0px !important;
+  }
+  
+  .mat-card-content {
+    margin-top: 2px;
+  }
+  
+  .custom-dialog-container .mat-dialog-container {
+    padding: 0px !important;
+  }
+  
+  .mat-dialog-content {
+    margin: 0px !important;
+  }
+  
+  .message-display {
+    padding: 0 5px;
+  }
+  
+  .mat-card-title {
+    display: flex;
+    align-items: center;
+    flex: 1; 
+    margin: 2px 0 0;
+    margin-bottom: 2px !important;
+  }
+  
+  .mat-dialog-actions {
+    padding: 2px 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 52px;
+    align-items: center;
+    box-sizing: content-box;
+    margin-bottom: -24px;
+    margin-left: 262px;
+  }
+  
+  .mat-flat-button {
+    background-color: #73bd1e;
+    width: 80px;
+    height: 35px;
+    padding: 0 15px;
+    text-align: center;
+  }
+  
+  
+  .appearance {
+    background-color: #fe9901;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
