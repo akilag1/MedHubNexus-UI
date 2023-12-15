@@ -16,6 +16,9 @@ import { AdminDashHomeComponent } from './dashboards/admin-dashboard/admin-dash-
 import { AdminDashCustomersComponent } from './dashboards/admin-dashboard/admin-dash-customers/admin-dash-customers.component';
 import { AdminDashPharmaciesComponent } from './dashboards/admin-dashboard/admin-dash-pharmacies/admin-dash-pharmacies.component';
 import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-dash-requests/admin-dash-requests.component';
+import { CustomerDashboardComponent } from './dashboards/customer-dashboard/customer-dashboard.component';
+import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/customer-dash-home/customer-dash-home.component';
+import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
 
 const routes: Routes = [
 
@@ -40,6 +43,13 @@ const routes: Routes = [
       { path: 'pharmacies', component: AdminDashPharmaciesComponent },
       { path: 'requests', component: AdminDashRequestsComponent },
       { path: '**', component: AdminDashHomeComponent },
+    ]
+  },
+  {
+    path: 'customer-dashboard', component: CustomerDashboardComponent, children: [
+      { path: '', component: CustomerDashHomeComponent },
+      { path: 'orders', component: CustomerDashOrdersComponent },
+      { path: '**', component: CustomerDashHomeComponent }
     ]
   },
   { path: '**', component: HomePageComponent }

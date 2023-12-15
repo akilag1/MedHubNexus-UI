@@ -62,7 +62,7 @@
             <input formControlName="passWord" matInput type="password" placeholder="Enter your password" name="password"
               required />
           </mat-form-field>
-          <button mat-raised-button color="primary" class="login-button" [disabled]="registerFormGroup.invalid">
+          <button mat-raised-button color="primary" (click)="onRegBtnPressed()" class="login-button" [disabled]="registerFormGroup.invalid">
             REGISTER
           </button>
           <div *ngIf="showProgressBar" class="spinner">

@@ -25,6 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
 import { MedicineThumbnailComponent } from './thumbnails/medicine-thumbnail/medicine-thumbnail.component';
@@ -44,6 +46,13 @@ import { AdminDashPharmaciesComponent } from './dashboards/admin-dashboard/admin
 import { PharmacyDashListingsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-listings/pharmacy-dash-listings.component';
 import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
 import { ImageBoxComponent } from './medicine-detail/image-box/image-box.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { PopUpComponent } from './pop-up/pop-up/pop-up.component';
+import { PharmacyDashListingsAddComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-listings/pharmacy-dash-listings-add/pharmacy-dash-listings-add.component';
+import { ConfirmationDialogComponent } from './pop-up/confirmation-dialog/confirmation-dialog.component';
+import { CustomerDashboardComponent } from './dashboards/customer-dashboard/customer-dashboard.component';
+import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/customer-dash-home/customer-dash-home.component';
+import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +81,14 @@ import { ImageBoxComponent } from './medicine-detail/image-box/image-box.compone
     AdminDashPharmaciesComponent,
     PharmacyDashListingsComponent,
     MedicineDetailComponent,
-    ImageBoxComponent
+    ImageBoxComponent,
+    PrescriptionComponent,
+    PopUpComponent,
+    PharmacyDashListingsAddComponent,
+    ConfirmationDialogComponent,
+    CustomerDashboardComponent,
+    CustomerDashHomeComponent,
+    CustomerDashOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -92,8 +108,10 @@ import { ImageBoxComponent } from './medicine-detail/image-box/image-box.compone
     MatButtonToggleModule,
     MatPaginatorModule,
     MatTooltipModule,
+    MatRadioModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

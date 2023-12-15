@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header class="card-title-text" >
+        <mat-card-title>{{title}}</mat-card-title>
+        <!-- <div fxFlex></div> -->
+    </mat-card-header>
+    <mat-card-content>
+        <div mat-dialog-content [ngClass]="title==='Warning' ? 'appearance-warn' : (title === 'Error' ? 'appearance-error' : 'appearance')" >
+            <mat-icon class="style-icon" style="font-size:3em;">{{ title === 'Warning' ? 'warning' : (title === 'Error' ? 'error' : 'check_circle')}}</mat-icon>
+            <p class="message-display">{{message}}</p>
+        </div>
+        <div mat-dialog-actions class="center-option">
+            <button mat-flat-button fxFlex="20%" [ngStyle]="title === 'Success' ? { 'background-color': '#fe9901' } : { 'background-color': '#73bd1e' }" (click)="closeDialog()">OK</button>
+        </div>
+    </mat-card-content>
+</mat-card>

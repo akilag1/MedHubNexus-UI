@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpComponent } from 'src/app/pop-up/pop-up/pop-up.component';
 
 @Component({
   selector: 'app-user-login-page',
@@ -13,7 +15,8 @@ export class UserLoginPageComponent implements OnInit {
   public showProgressBar = true;
   public userTypeControl = new FormControl('customer');
 
-  constructor(private _formBuilder: FormBuilder) { 
+  constructor(private _formBuilder: FormBuilder,
+    public dialog: MatDialog) { 
 
     this.loginFormGroup = this._formBuilder.group({
       'userName': ['', Validators.required],
@@ -34,6 +37,13 @@ export class UserLoginPageComponent implements OnInit {
   onLoginSubmit(){
     console.log(this.loginFormGroup.value);
     console.log(this.userTypeControl.value);
+  }
+
+  onRegBtnPressed(){
+    const dialogRef = this.dialog.open(PopUpComponent, {
+      width: '550px',
+      data: { message: "Registered Succesfully", title: 'Success' }
+    });
   }
 
 }
