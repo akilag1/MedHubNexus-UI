@@ -1,0 +1,32 @@
+/* filter.component.css */
+
+.filter-container {
+    height: 100%;
+  }
+  
+  .filter-sidenav {
+    width: 300px;
+  }
+  
+  .filter-form {
+    padding: 16px;
+  }
+  
+  .filter-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  mat-slider {
+    width: 100%;
+  }
+  
+  mat-checkbox {
+    display: block;
+  }
+  
+  button {
+    width: 100%;
+    margin-top: 16px;
+  }
+  

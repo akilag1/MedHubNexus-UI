@@ -4,15 +4,14 @@
     <div class="menu">
       <!-- Add your menu items here -->
       <div class="user_details">
-        <img width="150" height="150" src="../../assets/images/pharmacy1.jpg" alt="Pharmacy_picture">
+        <img width="150" height="150" src="../../assets/images/user3.jpg" alt="Pharmacy_picture">
         <h3>Hello</h3>
-        <h3>{{pharmacyName}}!</h3>
+        <h3>{{customerName}}!</h3>
       </div>
       <hr>
       <mat-list>
-        <mat-list-item routerLink="/pharmacy-dashboard" (click)="onClickList($event.target)">HOME</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/orders" (click)="onClickList($event.target)">ORDERS</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/listings" (click)="onClickList($event.target)">LISTINGS</mat-list-item>
+        <mat-list-item routerLink="/customer-dashboard" (click)="onClickList($event.target)">HOME</mat-list-item>
+        <mat-list-item routerLink="/customer-dashboard/orders" (click)="onClickList($event.target)">ORDERS</mat-list-item>
       </mat-list>
     </div>
 

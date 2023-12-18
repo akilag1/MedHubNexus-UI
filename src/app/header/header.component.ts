@@ -11,6 +11,8 @@ import { PrescriptionComponent } from '../prescription/prescription.component';
 })
 export class HeaderComponent implements OnInit {
 
+  public isAdmin:boolean = false;
+
   constructor(
     public dialog: MatDialog
     ) { }

@@ -1,15 +1,19 @@
 <app-header></app-header>
 <app-search [searchTypes]="searchTypes"></app-search>
+<!-- <app-filter></app-filter> -->
 <section class="health_section layout_padding">
     <div class="health_carousel-container">
       <h2 class="text-uppercase">
         Vitamins & Supplements</h2>
       <div class="carousel-wrap layout_padding2">
-        <div class="owl-carousel owl-2">
-          <app-medicine-thumbnail></app-medicine-thumbnail>
-          <app-medicine-thumbnail></app-medicine-thumbnail>
-          <app-medicine-thumbnail></app-medicine-thumbnail>
-          <app-medicine-thumbnail></app-medicine-thumbnail>
+        <div class="owl-carousel owl-2 grid-container">
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
+          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
         </div>
       </div>
     </div>

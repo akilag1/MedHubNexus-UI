@@ -26,6 +26,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
@@ -109,6 +110,7 @@ import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/cus
     MatPaginatorModule,
     MatTooltipModule,
     MatRadioModule,
+    MatSidenavModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule

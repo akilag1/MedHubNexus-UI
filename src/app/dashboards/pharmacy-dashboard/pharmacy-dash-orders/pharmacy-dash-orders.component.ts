@@ -7,18 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacyDashOrdersComponent implements OnInit {
 
-  public records: [] = [];
+  public orders:any = [];
   public showProgressbar: boolean = false;
   public totalCount: number = 1;
 
-  constructor() { }
+  constructor() {
+
+    this.orders = [{'orderId':123,'medicineId':12,'medcineName':'asprin','quantity':10,'status':'To be shipped'},
+    {'orderId':124,'medicineId':13,'medcineName':'asprine','quantity':8,'status':'To be shipped'},
+    {'orderId':125,'medicineId':14,'medcineName':'asprinr','quantity':12,'status':'Shipped'}]
+
+   }
 
   ngOnInit(): void {
   }
 
   onPageChange(event: any) {
 
-    this.records = [];
+    this.orders = [];
     // this.showProgressbar =true;
     const pageIndex = event.pageIndex;
     const pageSize = event.pageSize;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -27,6 +33,14 @@ export class PharmacyDashOrdersComponent implements OnInit {
       "page": pageIndex,
       "size": pageSize
     }
+  }
+
+  onShippedClicked(){
+
+  }
+
+  onCancelClicked(){
+
   }
 
 }

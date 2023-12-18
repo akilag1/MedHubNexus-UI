@@ -13,16 +13,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>111</td>
-                <td>Asprin</td>
-                <td>10$</td>
-                <td>10/50</td>
-                <td>ACTIVE</td>
+            <tr *ngFor="let listing of listings; index as i">
+                <td>{{listing['medicineId']}}</td>
+                <td>{{listing['medicineId']}}</td>
+                <td>{{listing['price']}}</td>
+                <td>{{listing['quantity']}}</td>
+                <td>{{listing['quantity']}}</td>
                 <td>
                     <img src="../../assets/icons/more-info2.png" matTooltip="more-info" alt="more-info" width="25px" height="25px">
                     <img src="../../assets/icons/edit1.png" matTooltip="edit" alt="more-info" width="25px" height="25px">
-                    <img src="../../assets/icons/cross1.png" matTooltip="remove" alt="more-info" width="25px" height="25px">
+                    <img src="../../assets/icons/cross1.png" (click)="onRemove(i)" matTooltip="remove" alt="more-info" width="25px" height="25px">
                 </td>
             </tr>
         </tbody>

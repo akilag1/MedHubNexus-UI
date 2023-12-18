@@ -3,10 +3,10 @@
     justify-content: space-between;
 }
 
-.health_section .health_carousel-container {
+/* .health_section .health_carousel-container {
   width: 90%;
   margin: 0 auto;
-}
+} */
 
 .health_section a {
   display: inline-block;
@@ -133,3 +133,7 @@
   background-image: url(/assets/images/next.png);
   right: 35px;
 }
+
+/* .grid-container {
+  display: inline-grid;
+} */
