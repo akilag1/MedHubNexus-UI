@@ -4,21 +4,25 @@
       <thead>
           <tr>
               <th>PHARMACY ID</th>
-              <th>PHARMACY NAME</th>
+              <th>USERNAME</th>
               <th>STATUS</th>
               <th>ACTIONS</th>
           </tr>
       </thead>
       <tbody>
-          <tr>
-              <td>111</td>
-              <td>Jane's Pharmacy</td>
-              <td>Pending</td>
+          <tr *ngFor="let pharmacy of pharmacies">
+              <td>{{pharmacy['pharmacyId']}}</td>
+              <td>{{pharmacy['userName']}}</td>
+              <td>{{pharmacy['status']}}</td>
               <td>
-                  <img src="../../assets/icons/check2.png" alt="more-info" width="25px" height="25px">
-                  <img src="../../assets/icons/cross1.png" alt="more-info" width="25px" height="25px">
+                  <img src="../../assets/icons/more-info2.png" matTooltip="more-info" alt="more-info" width="25px" height="25px">
+                  <img src="../../assets/icons/suspend2.png" matTooltip="suspend" alt="suspend" width="25px" height="25px">
+                    <img src="../../assets/icons/cross1.png" matTooltip="remove" alt="delete" width="25px" height="25px">
               </td>
           </tr>
       </tbody>
   </table>
+  <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
+        <mat-paginator [length]="totalCount" [pageSizeOptions]="[5, 10, 25, 50, 100]"
+          showFirstLastButtons (page)="onPageChange($event)"></mat-paginator>
 </div>

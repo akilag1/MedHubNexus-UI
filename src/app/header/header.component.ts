@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserLoginPageComponent } from '../login-page/user-login-page/user-login-page.component';
 import { CommonService } from '../services/common-service';
+import { PrescriptionComponent } from '../prescription/prescription.component';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,12 @@ export class HeaderComponent implements OnInit {
       height: '480px',
       width: '650px',
       panelClass: 'log-reg-container'
+    });
+  }
+
+  onPrescriptionClick(){
+    const dialogRef = this.dialog.open(PrescriptionComponent, {
+      width:'550px'
     });
   }
 

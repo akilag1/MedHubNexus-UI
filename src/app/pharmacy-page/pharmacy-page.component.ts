@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacyPageComponent implements OnInit {
 
+  public searchTypes: string[] = ['Pharmacy'];
+
   constructor() { }
 
   ngOnInit(): void {
