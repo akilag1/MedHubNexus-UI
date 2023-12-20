@@ -145,3 +145,6 @@
   gap: 10px; /* Adjust the gap between items */
 }
 
+::ng-deep mat-paginator .mat-paginator-container{
+  background-color: #f0efef;
+}

@@ -7,6 +7,7 @@
 
 .container mat-list-item {
   cursor: pointer;
+  margin-bottom: 2px;
 }
 
 .user_details {
@@ -49,4 +50,9 @@ mat-list-item:hover {
 
 .content hr {
   margin-bottom: 30px;
+}
+
+.mat-list-select{
+  background-color: rgb(228, 207, 89);
+  border-radius: 10px;
 }

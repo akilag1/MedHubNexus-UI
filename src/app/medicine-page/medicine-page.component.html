@@ -2,22 +2,17 @@
 <app-search [searchTypes]="searchTypes"></app-search>
 <!-- <app-filter></app-filter> -->
 <section class="health_section layout_padding">
-    <div class="health_carousel-container">
-      <h2 class="text-uppercase">
-        Vitamins & Supplements</h2>
-      <div class="carousel-wrap layout_padding2">
-        <div class="owl-carousel owl-2 grid-container">
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-          <app-medicine-thumbnail class="grid-item"></app-medicine-thumbnail>
-        </div>
+  <div class="health_carousel-container">
+    <h2 class="text-uppercase">
+      Vitamins & Supplements</h2>
+    <div class="grid-container">
+      <div class="grid-row" *ngFor="let row of rows">
+        <app-medicine-thumbnail *ngFor="let item of row"></app-medicine-thumbnail>
       </div>
     </div>
-  </section>
+    <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
+    <mat-paginator [length]="totalCount" [pageSizeOptions]="[8,16,32]" showFirstLastButtons
+      (page)="onPageChange($event)"></mat-paginator>
+  </div>
+</section>
 <app-footer></app-footer>
-  
-

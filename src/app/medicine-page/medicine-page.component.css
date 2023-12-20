@@ -3,10 +3,10 @@
     justify-content: space-between;
 }
 
-/* .health_section .health_carousel-container {
+.health_section .health_carousel-container {
   width: 90%;
   margin: 0 auto;
-} */
+}
 
 .health_section a {
   display: inline-block;
@@ -134,6 +134,17 @@
   right: 35px;
 }
 
-/* .grid-container {
-  display: inline-grid;
-} */
+/* grid.component.css */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-row {
+  display: flex;
+  gap: 10px; /* Adjust the gap between items */
+}
+
+::ng-deep mat-paginator .mat-paginator-container{
+  background-color: #f0efef;
+}

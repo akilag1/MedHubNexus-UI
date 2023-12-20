@@ -54,6 +54,8 @@ import { ConfirmationDialogComponent } from './pop-up/confirmation-dialog/confir
 import { CustomerDashboardComponent } from './dashboards/customer-dashboard/customer-dashboard.component';
 import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/customer-dash-home/customer-dash-home.component';
 import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
+import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
+import { PurchaseComponent } from './purchase/purchase.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,9 @@ import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/cus
     ConfirmationDialogComponent,
     CustomerDashboardComponent,
     CustomerDashHomeComponent,
-    CustomerDashOrdersComponent
+    CustomerDashOrdersComponent,
+    PharmacyDetailComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,

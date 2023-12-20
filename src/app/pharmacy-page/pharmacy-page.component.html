@@ -1,17 +1,18 @@
 <app-header></app-header>
 <app-search [searchTypes]="searchTypes"></app-search>
 <section class="health_section layout_padding">
-    <div class="health_carousel-container">
-      <h2 class="text-uppercase">
-        PHARMACIES
-      </h2>
-      <div class="grid-container">
-        <div class="grid-row" *ngFor="let row of rows">
-          <app-pharmacy-thumbnail *ngFor="let item of row"></app-pharmacy-thumbnail>
-        </div>
+  <div class="health_carousel-container">
+    <h2 class="text-uppercase">
+      PHARMACIES
+    </h2>
+    <div class="grid-container">
+      <div class="grid-row" *ngFor="let row of rows">
+        <app-pharmacy-thumbnail *ngFor="let item of row"></app-pharmacy-thumbnail>
       </div>
     </div>
-  </section>
+    <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
+    <mat-paginator [length]="totalCount" [pageSizeOptions]="[8,16,32]" showFirstLastButtons
+      (page)="onPageChange($event)"></mat-paginator>
+  </div>
+</section>
 <app-footer></app-footer>
-  
-

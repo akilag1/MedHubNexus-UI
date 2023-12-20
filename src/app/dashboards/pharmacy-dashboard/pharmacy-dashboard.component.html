@@ -7,12 +7,13 @@
         <img width="150" height="150" src="../../assets/images/pharmacy1.jpg" alt="Pharmacy_picture">
         <h3>Hello</h3>
         <h3>{{pharmacyName}}!</h3>
+        <a routerLink="#">Edit Profile</a>
       </div>
       <hr>
       <mat-list>
-        <mat-list-item routerLink="/pharmacy-dashboard" (click)="onClickList($event.target)">HOME</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/orders" (click)="onClickList($event.target)">ORDERS</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/listings" (click)="onClickList($event.target)">LISTINGS</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='HOME'}">HOME</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard/orders" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='ORDERS'}">ORDERS</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard/listings" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='LISTINGS'}">LISTINGS</mat-list-item>
       </mat-list>
     </div>
 
