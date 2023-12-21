@@ -29,14 +29,6 @@ export class PharmacyPageComponent implements OnInit {
   }
 
   initializeGrid(): void {
-    // const totalItems = 7;
-    // const itemsPerRow = 4;
-
-    // for (let i = 0; i < totalItems; i += itemsPerRow) {
-    //   const row = Array.from({ length: itemsPerRow }, (_, index) => i + index + 1);
-    //   console.log(row);
-    //   this.rows.push(row);
-    // }
 
     const totalItems = 9;
     const itemsPerRow = 4;

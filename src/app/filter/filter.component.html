@@ -1,29 +1,19 @@
-<mat-sidenav-container class="filter-container">
-    <mat-sidenav mode="side" opened class="filter-sidenav">
-      <form class="filter-form">
-        <mat-form-field class="filter-field">
-          <mat-label>Price Range</mat-label>
-          <mat-slider thumbLabel tickInterval="100" min="0" max="1000" [(ngModel)]="priceRange"></mat-slider>
-        </mat-form-field>
+<div class="filter-container">
+
+  <mat-form-field>
+    <mat-label>Select Location</mat-label>
+    <mat-select>
+      <mat-option value="one">Colombo</mat-option>
+      <mat-option value="two">Kandy</mat-option>
+      <mat-option value="two">Galle</mat-option>
+      <mat-option value="two">Matara</mat-option>
+      <mat-option value="two">Jaffna</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
+    <input matSliderThumb>
+  </mat-slider>
   
-        <mat-form-field class="filter-field">
-          <mat-label>Locations</mat-label>
-          <mat-checkbox *ngFor="let location of locations" [(ngModel)]="location.checked">{{ location.name }}</mat-checkbox>
-        </mat-form-field>
-  
-        <mat-form-field class="filter-field">
-          <mat-label>Brands</mat-label>
-          <mat-select [(ngModel)]="selectedBrand" multiple>
-            <mat-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <button mat-raised-button color="primary" (click)="applyFilters()">Apply Filters</button>
-      </form>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <!-- Your main content goes here -->
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+
+</div>
