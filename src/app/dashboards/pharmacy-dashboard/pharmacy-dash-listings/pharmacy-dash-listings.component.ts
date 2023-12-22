@@ -44,16 +44,9 @@ export class PharmacyDashListingsComponent implements OnInit {
   }
 
   addNewListing(){
-    if(this.approved){
       const dialogRef = this.dialog.open(PharmacyDashListingsAddComponent, {
         width:'550px'
       });
-    }else{
-      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-        data: { message: "Please provide a license before listing medicines" },
-        width:'500px'
-      });
-    }
   }
 
   onRemove(index:number){
