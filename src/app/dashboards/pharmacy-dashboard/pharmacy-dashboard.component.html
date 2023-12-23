@@ -12,8 +12,8 @@
       <hr>
       <mat-list>
         <mat-list-item routerLink="/pharmacy-dashboard" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='HOME'}">HOME</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/orders" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='ORDERS'}">ORDERS</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/listings" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='LISTINGS'}">LISTINGS</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard/orders" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='ORDERS'}" [disabled]="true">ORDERS</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard/listings" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='LISTINGS'}" [disabled]="true">LISTINGS</mat-list-item>
       </mat-list>
     </div>
 

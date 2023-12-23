@@ -45,7 +45,7 @@ export class PharmacyDashListingsComponent implements OnInit {
 
   addNewListing(){
       const dialogRef = this.dialog.open(PharmacyDashListingsAddComponent, {
-        width:'550px'
+        width:'850px'
       });
   }
 

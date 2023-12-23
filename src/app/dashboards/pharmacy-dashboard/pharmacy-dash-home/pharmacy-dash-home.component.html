@@ -1,7 +1,7 @@
 <div *ngIf="!verified" class="verify-warning">
     <img src="../../assets/icons/caution1.png">
     <h3>PLEASE VERIFY YOUR ACCOUNT</h3>
-    <a href="#">Click to Verify</a>
+    <a href="addNewListing()">Click to Verify</a>
 </div>
 <mat-grid-list cols="3" rowHeight="2:1" *ngIf="verified">
     <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle1"></app-dash-home-box></mat-grid-tile>

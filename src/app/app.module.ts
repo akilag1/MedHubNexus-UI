@@ -28,6 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
@@ -57,6 +58,7 @@ import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/custo
 import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
 import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
 import { PurchaseComponent } from './purchase/purchase.component';
+import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-details/pharmacy-dash-details.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +96,8 @@ import { PurchaseComponent } from './purchase/purchase.component';
     CustomerDashHomeComponent,
     CustomerDashOrdersComponent,
     PharmacyDetailComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    PharmacyDashDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -117,6 +120,7 @@ import { PurchaseComponent } from './purchase/purchase.component';
     MatRadioModule,
     MatSidenavModule,
     MatSliderModule,
+    MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule

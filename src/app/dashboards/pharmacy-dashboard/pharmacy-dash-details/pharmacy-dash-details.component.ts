@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-pharmacy-dash-listings-add',
-  templateUrl: './pharmacy-dash-listings-add.component.html',
-  styleUrls: ['./pharmacy-dash-listings-add.component.css']
+  selector: 'app-pharmacy-dash-details',
+  templateUrl: './pharmacy-dash-details.component.html',
+  styleUrls: ['./pharmacy-dash-details.component.css']
 })
-export class PharmacyDashListingsAddComponent implements OnInit {
+export class PharmacyDashDetailsComponent implements OnInit {
 
   public createListingGroup: FormGroup;
 

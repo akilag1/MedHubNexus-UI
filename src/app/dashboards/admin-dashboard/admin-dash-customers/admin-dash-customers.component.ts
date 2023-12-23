@@ -38,4 +38,16 @@ export class AdminDashCustomersComponent implements OnInit {
     }
   }
 
+  onActive(id:number){
+    this.customers[id]['status'] = "Active";
+  }
+
+  onSuspend(id:number){
+    this.customers[id]['status'] = "Suspended";
+  }
+
+  onRemove(id:number){
+    console.log("Removed")
+  }
+
 }

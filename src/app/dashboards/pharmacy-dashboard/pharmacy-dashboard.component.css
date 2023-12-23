@@ -25,6 +25,10 @@ mat-list-item:hover {
   border-radius: 10px;
 }
 
+::ng-deep .mat-list-base .mat-list-item-disabled {
+  background-color: #e0e0e0;
+}
+
 ::ng-deep .mat-list-item-content{
   justify-content: center;
   font-weight: bold;

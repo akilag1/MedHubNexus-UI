@@ -1,19 +1,31 @@
 <div class="filter-container">
 
-  <mat-form-field>
-    <mat-label>Select Location</mat-label>
-    <mat-select>
-      <mat-option value="one">Colombo</mat-option>
-      <mat-option value="two">Kandy</mat-option>
-      <mat-option value="two">Galle</mat-option>
-      <mat-option value="two">Matara</mat-option>
-      <mat-option value="two">Jaffna</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div>
+    <mat-form-field>
+      <mat-label>Select Location</mat-label>
+      <mat-select>
+        <mat-option value="one">Colombo</mat-option>
+        <mat-option value="two">Kandy</mat-option>
+        <mat-option value="two">Galle</mat-option>
+        <mat-option value="two">Matara</mat-option>
+        <mat-option value="two">Jaffna</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
+      <input matSliderThumb>
+    </mat-slider>
+  </div>
 
-  <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
-    <input matSliderThumb>
-  </mat-slider>
+  <div>
+    <section>
+      <p>Select Brand</p>
+      <p><mat-checkbox>Brand1</mat-checkbox></p>
+      <p><mat-checkbox>Brand2</mat-checkbox></p>
+      <p><mat-checkbox>Brand3</mat-checkbox></p>
+    </section>
+  </div>
   
 
 </div>

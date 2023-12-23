@@ -13,6 +13,7 @@ export class FilterComponent implements OnInit {
   }
 
   formatLabel(value: number): string {
+    console.log("inside format label")
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
     }
