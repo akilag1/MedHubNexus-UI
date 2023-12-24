@@ -13,7 +13,7 @@ export class PharmacyDashHomeComponent implements OnInit {
   public boxTitle2 = "INBOX"
   public boxTitle3 = "LISTINGS"
   public boxTitle4 = "OUT OF STOCK"
-  public verified:boolean = false;
+  public verified:boolean = true;
 
   constructor(public dialog: MatDialog) { }
 
