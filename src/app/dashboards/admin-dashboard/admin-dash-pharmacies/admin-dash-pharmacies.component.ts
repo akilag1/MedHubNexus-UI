@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashPharmaciesComponent implements OnInit {
 
-  public pharmacies:any = []
+  public pharmacists:any = []
   public showProgressbar: boolean = false;
   public totalCount: number = 1;
 
   constructor() {
 
-    this.pharmacies = [{'pharmacyId':1,'userName':'jane123','status':'Active'},
-                        {'pharmacyId':2,'userName':'jane124','status':'Active'},
-                        {'pharmacyId':3,'userName':'jane125','status':'Suspended'},
-                        {'pharmacyId':4,'userName':'jane126','status':'Suspended'},
-                        {'pharmacyId':5,'userName':'jane127','status':'Active'},
-                        {'pharmacyId':6,'userName':'jane128','status':'Active'}]
+    this.pharmacists = [{'pharmacistId':1,'userName':'jane123','email':'test@gmail.com','status':'Active'},
+                        {'pharmacistId':2,'userName':'jane124','email':'test@gmail.com','status':'Active'},
+                        {'pharmacistId':3,'userName':'jane125','email':'test@gmail.com','status':'Suspended'},
+                        {'pharmacistId':4,'userName':'jane126','email':'test@gmail.com','status':'Suspended'},
+                        {'pharmacistId':5,'userName':'jane127','email':'test@gmail.com','status':'Active'},
+                        {'pharmacistId':6,'userName':'jane128','email':'test@gmail.com','status':'Active'}]
 
    }
 

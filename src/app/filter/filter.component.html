@@ -13,9 +13,24 @@
     </mat-form-field>
   </div>
   <div>
-    <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
-      <input matSliderThumb>
-    </mat-slider>
+    <mat-card class="example-result-card">
+      <mat-card-content>
+        <h2>Result</h2>
+    
+        <div class="example-label-container">
+          <label id="example-name-label" class="example-name-label">Value</label>
+          <label class="example-value-label">{{slider.value}}</label>
+        </div>
+        <mat-slider
+            class="example-margin"
+            [disabled]="disabled"
+            [max]="max"
+            [min]="min"
+            [step]="step">
+          <input matSliderThumb [(ngModel)]="value" #slider>
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
   </div>
 
   <div>

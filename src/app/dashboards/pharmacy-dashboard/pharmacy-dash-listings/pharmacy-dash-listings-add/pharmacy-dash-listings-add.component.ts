@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pharmacy-dash-listings-add',
@@ -13,9 +13,13 @@ export class PharmacyDashListingsAddComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {
 
     this.createListingGroup = this._formBuilder.group({
-      'userName': ['', Validators.required],
-      'email': ['', [Validators.required, Validators.email]],
-      'passWord': ['', Validators.required],
+      'drugName': '',
+      'manuName': '',
+      'manuDate': '',
+      'expDate': '',
+      'quantity': '',
+      'price': '',
+      thumbnails: this._formBuilder.array([])
     })
 
    }
@@ -25,6 +29,29 @@ export class PharmacyDashListingsAddComponent implements OnInit {
 
   onFormSubmit(){
     console.log(this.createListingGroup.value);
+  }
+
+  get thumbnails() {
+    return this.createListingGroup.get('thumbnails') as FormArray;
+  }
+
+  onFileChange(event: any) {
+    const files = event.target.files;
+    for (let i = 0; i < files.length; i++) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.thumbnails.push(this._formBuilder.control(e.target.result));
+      };
+      reader.readAsDataURL(files[i]);
+    }
+  }
+
+  removeThumbnail(index: number) {
+    this.thumbnails.removeAt(index);
+  }
+
+  getThumbnailUrl(dataUrl: string) {
+    return dataUrl;
   }
 
 }

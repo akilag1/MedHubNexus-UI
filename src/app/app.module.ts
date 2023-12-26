@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminLoginPageComponent } from './login-page/admin-login-page/admin-login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -29,6 +30,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
@@ -103,6 +107,7 @@ import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/ph
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
@@ -121,11 +126,13 @@ import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/ph
     MatSidenavModule,
     MatSliderModule,
     MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

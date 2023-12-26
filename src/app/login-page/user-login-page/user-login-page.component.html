@@ -21,11 +21,11 @@
         <form [formGroup]="loginFormGroup" (ngSubmit)="onLoginSubmit()">
           <mat-form-field class="full-width">
             <mat-label>Username</mat-label>
-            <input formControlName="userName" matInput placeholder="Enter your username" name="username" required />
+            <input formControlName="login" matInput placeholder="Enter your username" name="username" required />
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input formControlName="passWord" matInput type="password" placeholder="Enter your password" name="password"
+            <input formControlName="password" matInput type="password" placeholder="Enter your password" name="password"
               required />
           </mat-form-field>
           <button mat-raised-button color="primary" class="login-button" [disabled]="loginFormGroup.invalid">
@@ -51,7 +51,7 @@
         <form [formGroup]="registerFormGroup">
           <mat-form-field class="full-width">
             <mat-label>Username</mat-label>
-            <input formControlName="userName" matInput placeholder="Enter your username" name="username" required />
+            <input formControlName="login" matInput placeholder="Enter your username" name="username" required />
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
@@ -59,10 +59,10 @@
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input formControlName="passWord" matInput type="password" placeholder="Enter your password" name="password"
+            <input formControlName="password" matInput type="password" placeholder="Enter your password" name="password"
               required />
           </mat-form-field>
-          <button mat-raised-button color="primary" (click)="onRegBtnPressed()" class="login-button" [disabled]="registerFormGroup.invalid">
+          <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="login-button" [disabled]="registerFormGroup.invalid">
             REGISTER
           </button>
           <div *ngIf="showProgressBar" class="spinner">

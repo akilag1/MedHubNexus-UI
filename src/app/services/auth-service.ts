@@ -1,7 +1,14 @@
-import { HttpClient,HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { ServiceResponse } from '../models/ServiceResponse';
+import { Observable} from 'rxjs';
+
+export interface AuthResponseData {
+  id: number,
+  login: string;
+  token: string;
+  email: string;
+  userType: string;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +20,28 @@ export class AuthService {
 
   // private apiUrl = 'http://your-backend-api-url';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getToken(): Observable<ServiceResponse> {
-    return this.http.get<ServiceResponse>(`localhost:8080/medhubnexus/customer/test`);
+  getToken(formData:any):Observable<AuthResponseData> {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+  
+    return this.http.post<AuthResponseData>(`http://localhost:8080/medhubnexus/auth/login`, formData, {headers})
+
   }
+
+  registerUser(formData:any):Observable<AuthResponseData>{
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+  
+    return this.http.post<AuthResponseData>(`http://localhost:8080/medhubnexus/auth/register`, formData, {headers})
+
+
+  }
+
+
 }

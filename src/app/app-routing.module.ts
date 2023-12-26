@@ -40,7 +40,7 @@ const routes: Routes = [
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
       { path: '', component: AdminDashHomeComponent },
       { path: 'customers', component: AdminDashCustomersComponent },
-      { path: 'pharmacies', component: AdminDashPharmaciesComponent },
+      { path: 'pharmacists', component: AdminDashPharmaciesComponent },
       { path: 'requests', component: AdminDashRequestsComponent },
       { path: '**', component: AdminDashHomeComponent },
     ]

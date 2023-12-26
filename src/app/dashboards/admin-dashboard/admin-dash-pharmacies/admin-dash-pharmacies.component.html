@@ -3,16 +3,18 @@
   <table class="main-table">
       <thead>
           <tr>
-              <th>PHARMACY ID</th>
+              <th>PHARMACIST ID</th>
               <th>USERNAME</th>
+              <th>EMAIL</th>
               <th>STATUS</th>
               <th>ACTIONS</th>
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let pharmacy of pharmacies">
-              <td>{{pharmacy['pharmacyId']}}</td>
+          <tr *ngFor="let pharmacy of pharmacists">
+              <td>{{pharmacy['pharmacistId']}}</td>
               <td>{{pharmacy['userName']}}</td>
+              <th>{{pharmacy['email']}}</th>
               <td>{{pharmacy['status']}}</td>
               <td>
                   <img src="../../assets/icons/more-info2.png" matTooltip="more-info" alt="more-info" width="25px" height="25px">

@@ -6,3 +6,12 @@
     text-align: center;
     margin-top: 90px;
 }
+
+.verify-link{
+    cursor: pointer;
+}
+
+.verify-link:hover{
+    cursor: pointer;
+    color: blue;
+}

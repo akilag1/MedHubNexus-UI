@@ -13,17 +13,19 @@ export class PharmacyDashHomeComponent implements OnInit {
   public boxTitle2 = "INBOX"
   public boxTitle3 = "LISTINGS"
   public boxTitle4 = "OUT OF STOCK"
-  public verified:boolean = true;
+  public verified: boolean = false;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  addNewListing(){
+  addNewListing() {
     const dialogRef = this.dialog.open(PharmacyDashDetailsComponent, {
-      width:'850px'
+      width: '850px'
     });
-}
+  }
+
+  onVerify(){}
 
 }

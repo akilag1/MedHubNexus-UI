@@ -56,3 +56,9 @@ mat-list-item:hover{
 .spinner span{
   margin-left: 5px;
 }
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+}
