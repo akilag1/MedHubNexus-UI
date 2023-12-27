@@ -50,7 +50,7 @@ export class AdminDashCustomersComponent implements OnInit {
   }
 
   onRemove(id:number){
-    const successMessage = 'Are you sure you want to remove the Customer permenently';
+    const successMessage = 'Are you sure you want to remove the Customer permenently?';
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '500px',
       data: { message: successMessage, title: "Danger" }
@@ -58,7 +58,7 @@ export class AdminDashCustomersComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result)=>{
       if(result){
         this.customers.splice(id,1);
-        const successMessage = 'Customer deleted successfully';
+        const successMessage = 'Customer has been deleted';
           const dialogRef = this.dialog.open(PopUpComponent, {
             width: '550px',
             data: { message: successMessage, title: 'Success' }

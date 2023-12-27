@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from 'src/app/pop-up/confirmation-dialog/confirmation-dialog.component';
+import { PopUpComponent } from 'src/app/pop-up/pop-up/pop-up.component';
 
 @Component({
   selector: 'app-admin-dash-pharmacies',
@@ -11,7 +14,7 @@ export class AdminDashPharmaciesComponent implements OnInit {
   public showProgressbar: boolean = false;
   public totalCount: number = 1;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
 
     this.pharmacists = [{'pharmacistId':1,'userName':'jane123','email':'test@gmail.com','status':'Active'},
                         {'pharmacistId':2,'userName':'jane124','email':'test@gmail.com','status':'Active'},
@@ -35,6 +38,26 @@ export class AdminDashPharmaciesComponent implements OnInit {
       "page": pageIndex,
       "size": pageSize
     }
+  }
+
+  onRemove(id:number){
+    const successMessage = 'Are you sure you want to remove the Pharmacist permenently?';
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '500px',
+      data: { message: successMessage, title: "Danger" }
+    });
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result){
+        this.pharmacists.splice(id,1);
+        const successMessage = 'Pharmacist has been deleted';
+          const dialogRef = this.dialog.open(PopUpComponent, {
+            width: '550px',
+            data: { message: successMessage, title: 'Success' }
+          })
+      }else{
+        console.log("canceled");
+      }
+    })
   }
 
 }
