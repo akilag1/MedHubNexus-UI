@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PharmacyDashDetailsComponent } from '../pharmacy-dash-details/pharmacy-dash-details.component';
+import { PharmacyDashHomeVerifyComponent } from './pharmacy-dash-home-verify/pharmacy-dash-home-verify.component';
 
 @Component({
   selector: 'app-pharmacy-dash-home',
@@ -26,6 +27,10 @@ export class PharmacyDashHomeComponent implements OnInit {
     });
   }
 
-  onVerify(){}
+  onVerify(){
+    const dialogRef = this.dialog.open(PharmacyDashHomeVerifyComponent, {
+      width:'850px'
+    });
+  }
 
 }

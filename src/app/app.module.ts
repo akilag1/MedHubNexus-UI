@@ -63,6 +63,7 @@ import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/cus
 import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-details/pharmacy-dash-details.component';
+import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-home/pharmacy-dash-home-verify/pharmacy-dash-home-verify.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/ph
     CustomerDashOrdersComponent,
     PharmacyDetailComponent,
     PurchaseComponent,
-    PharmacyDashDetailsComponent
+    PharmacyDashDetailsComponent,
+    PharmacyDashHomeVerifyComponent
   ],
   imports: [
     BrowserModule,

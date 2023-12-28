@@ -15,12 +15,26 @@ export interface AuthResponseData {
 })
 export class AuthService {
 
-  //localStorage or this vaiable can be used
-  private isAuthenticated = false;
-
+  private readonly TOKEN_KEY = 'token';
   // private apiUrl = 'http://your-backend-api-url';
 
   constructor(private http: HttpClient) { }
+
+  get token(): string | null {
+    return localStorage.getItem(this.TOKEN_KEY);
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem(this.TOKEN_KEY, token);
+  }
+
+  removeToken(): void {
+    localStorage.removeItem(this.TOKEN_KEY);
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.token;
+  }
 
   getToken(formData:any):Observable<AuthResponseData> {
 
