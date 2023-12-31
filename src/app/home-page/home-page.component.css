@@ -409,3 +409,7 @@
 .see-more-btn{
   margin-bottom: 40px;
 }
+
+.icon-display {
+  transform: scale(5);
+}
