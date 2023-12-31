@@ -133,3 +133,18 @@
   background-image: url(/assets/images/next.png);
   right: 35px;
 }
+
+/* grid.component.css */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-row {
+  display: flex;
+  gap: 10px; /* Adjust the gap between items */
+}
+
+::ng-deep mat-paginator .mat-paginator-container{
+  background-color: #f0efef;
+}

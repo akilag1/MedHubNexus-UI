@@ -1,4 +1,9 @@
-<mat-grid-list cols="3" rowHeight="2:1">
+<div *ngIf="!verified" class="verify-warning">
+    <img src="../../assets/icons/caution1.png">
+    <h3>PLEASE VERIFY YOUR ACCOUNT</h3>
+    <p class="verify-link" (click)="onVerify()">Click to Verify</p>
+</div>
+<mat-grid-list cols="3" rowHeight="2:1" *ngIf="verified">
     <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle1"></app-dash-home-box></mat-grid-tile>
     <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle2"></app-dash-home-box></mat-grid-tile>
     <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle3"></app-dash-home-box></mat-grid-tile>

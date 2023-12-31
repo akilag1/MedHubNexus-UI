@@ -57,8 +57,15 @@
   }
   
   
-  .appearance {
+  .appearance-warn {
     background-color: #fe9901;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .appearance-danger {
+    background-color: #c4041d;
     text-align: center;
     text-transform: uppercase;
     color: #fff;

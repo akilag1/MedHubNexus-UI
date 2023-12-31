@@ -14,4 +14,8 @@ export class MedicineThumbnailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBuy(){
+    
+  }
+
 }

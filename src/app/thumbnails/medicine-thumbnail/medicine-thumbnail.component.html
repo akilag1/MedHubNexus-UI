@@ -14,7 +14,7 @@
         </div> -->
         <div class="text">
           <h6>
-            <a href="">{{medicineName}}</a>
+            <a routerLink="#">{{medicineName}}</a>
           </h6>
           <h6 class="price">
             <span>
@@ -28,7 +28,7 @@
         <button id="btn_add_to_cart" class="btn btn-primary" type="button">
           Add to Cart
         </button>
-        <button class="btn btn-primary" type="button">
+        <button class="btn btn-primary" type="button" (click)="onBuy()">
           Buy Now
         </button>
       </div>

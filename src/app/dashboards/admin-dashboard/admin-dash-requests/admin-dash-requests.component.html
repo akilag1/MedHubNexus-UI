@@ -10,15 +10,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let request of requests">
+            <tr *ngFor="let request of requests; index as i">
                 <td>{{request['requestId']}}</td>
                 <td>{{request['pharmacyId']}}</td>
                 <td>{{request['pharamacyUsername']}}</td>
                 <td>{{request['status']}}</td>
                 <td>
-                    <img src="../../assets/icons/check2.png" matTooltip="approve" (click)="onAccept()" alt="approve"
+                    <img src="../../assets/icons/check2.png" (click)="onApprove(i)" matTooltip="approve" alt="approve"
                         width="25px" height="25px">
-                    <img src="../../assets/icons/cross1.png" matTooltip="deny" (click)="onDeny()" alt="deny"
+                    <img src="../../assets/icons/cross1.png" (click)="onDeny(i)" matTooltip="deny" alt="deny"
                         width="25px" height="25px">
                 </td>
             </tr>

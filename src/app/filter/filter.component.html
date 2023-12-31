@@ -1,1 +1,46 @@
-<p>filter works!</p>
+<div class="filter-container">
+
+  <div>
+    <mat-form-field>
+      <mat-label>Select Location</mat-label>
+      <mat-select>
+        <mat-option value="one">Colombo</mat-option>
+        <mat-option value="two">Kandy</mat-option>
+        <mat-option value="two">Galle</mat-option>
+        <mat-option value="two">Matara</mat-option>
+        <mat-option value="two">Jaffna</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-card class="example-result-card">
+      <mat-card-content>
+        <h2>Result</h2>
+    
+        <div class="example-label-container">
+          <label id="example-name-label" class="example-name-label">Value</label>
+          <label class="example-value-label">{{slider.value}}</label>
+        </div>
+        <mat-slider
+            class="example-margin"
+            [disabled]="disabled"
+            [max]="max"
+            [min]="min"
+            [step]="step">
+          <input matSliderThumb [(ngModel)]="value" #slider>
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div>
+    <section>
+      <p>Select Brand</p>
+      <p><mat-checkbox>Brand1</mat-checkbox></p>
+      <p><mat-checkbox>Brand2</mat-checkbox></p>
+      <p><mat-checkbox>Brand3</mat-checkbox></p>
+    </section>
+  </div>
+  
+
+</div>

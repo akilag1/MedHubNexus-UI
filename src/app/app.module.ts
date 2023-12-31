@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminLoginPageComponent } from './login-page/admin-login-page/admin-login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -26,6 +27,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
 import { PharmacyPageComponent } from './pharmacy-page/pharmacy-page.component';
@@ -53,6 +60,10 @@ import { ConfirmationDialogComponent } from './pop-up/confirmation-dialog/confir
 import { CustomerDashboardComponent } from './dashboards/customer-dashboard/customer-dashboard.component';
 import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/customer-dash-home/customer-dash-home.component';
 import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
+import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
+import { PurchaseComponent } from './purchase/purchase.component';
+import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-details/pharmacy-dash-details.component';
+import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-home/pharmacy-dash-home-verify/pharmacy-dash-home-verify.component';
 
 @NgModule({
   declarations: [
@@ -88,12 +99,17 @@ import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/cus
     ConfirmationDialogComponent,
     CustomerDashboardComponent,
     CustomerDashHomeComponent,
-    CustomerDashOrdersComponent
+    CustomerDashOrdersComponent,
+    PharmacyDetailComponent,
+    PurchaseComponent,
+    PharmacyDashDetailsComponent,
+    PharmacyDashHomeVerifyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
@@ -109,11 +125,16 @@ import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/cus
     MatPaginatorModule,
     MatTooltipModule,
     MatRadioModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

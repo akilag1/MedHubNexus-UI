@@ -1,20 +1,61 @@
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable} from 'rxjs';
+
+export interface AuthResponseData {
+  id: number,
+  login: string;
+  token: string;
+  email: string;
+  userType: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 
-  //localStorage or this vaiable can be used
-  private isAuthenticated = false;
+  private readonly TOKEN_KEY = 'token';
+  // private apiUrl = 'http://your-backend-api-url';
 
-  private apiUrl = 'http://your-backend-api-url';
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {}
-
-  login(username: string, password: string) {
-    const credentials = { username, password };
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+  get token(): string | null {
+    return localStorage.getItem(this.TOKEN_KEY);
   }
+
+  setToken(token: string): void {
+    localStorage.setItem(this.TOKEN_KEY, token);
+  }
+
+  removeToken(): void {
+    localStorage.removeItem(this.TOKEN_KEY);
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.token;
+  }
+
+  getToken(formData:any):Observable<AuthResponseData> {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+  
+    return this.http.post<AuthResponseData>(`http://localhost:8080/medhubnexus/auth/login`, formData, {headers})
+
+  }
+
+  registerUser(formData:any):Observable<AuthResponseData>{
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+  
+    return this.http.post<AuthResponseData>(`http://localhost:8080/medhubnexus/auth/register`, formData, {headers})
+
+
+  }
+
+
 }

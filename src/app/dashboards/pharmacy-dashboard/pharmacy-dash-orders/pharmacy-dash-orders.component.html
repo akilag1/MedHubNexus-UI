@@ -12,16 +12,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>111</td>
-                <td>10</td>
-                <td>Asprin</td>
-                <td>10</td>
-                <td>Shipped</td>
+            <tr *ngFor="let order of orders">
+                <td>{{order['orderId']}}</td>
+                <td>{{order['medicineId']}}</td>
+                <td>{{order['medcineName']}}</td>
+                <td>{{order['quantity']}}</td>
+                <td>{{order['status']}}</td>
                 <td>
                     <img src="../../assets/icons/more-info2.png" matTooltip="more info" alt="more-info" width="25px" height="25px">
-                    <img src="../../assets/icons/shipped1.png" matTooltip="mark as shipped" alt="more-info" width="25px" height="25px">
-                    <img src="../../assets/icons/cross1.png" matTooltip="cancel" alt="more-info" width="25px" height="25px">
+                    <img src="../../assets/icons/shipped1.png" matTooltip="mark as shipped" (click)="onShippedClicked()" alt="more-info" width="25px" height="25px">
+                    <img src="../../assets/icons/cross1.png" matTooltip="cancel" (click)="onCancelClicked()" alt="more-info" width="25px" height="25px">
                 </td>
             </tr>
         </tbody>

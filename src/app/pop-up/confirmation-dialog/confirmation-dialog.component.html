@@ -4,7 +4,7 @@
       <!-- <div fxFlex></div> -->
     </mat-card-header>
     <mat-card-content>
-      <div mat-dialog-content class="appearance">
+      <div mat-dialog-content [ngClass]="title==='Warning' ? 'appearance-warn' : 'appearance-danger'">
         <mat-icon class="style-icon" style="font-size:3em;">check_circle</mat-icon>
         <p class="message-display">{{message}}</p>
       </div>
