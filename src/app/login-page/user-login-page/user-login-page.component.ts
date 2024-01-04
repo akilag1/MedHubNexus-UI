@@ -1,6 +1,7 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopUpComponent } from 'src/app/pop-up/pop-up/pop-up.component';
 import { AuthService } from 'src/app/services/auth-service';
@@ -14,14 +15,18 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
 
   public loginFormGroup: FormGroup;
   public registerFormGroup: FormGroup;
-  public showProgressBar = false;
+  public showProgressBar:boolean = false;
+  public logOn:boolean = false;
+  public regOn:boolean = false;
   public userTypeControl = new FormControl('customer');
   public loginData: Subscription | null = null;
   public registerData: Subscription | null = null;
 
   constructor(private _formBuilder: FormBuilder,
     public dialog: MatDialog,
-    public authService: AuthService) { 
+    public authService: AuthService,
+    private router: Router,
+    public dialogRefMain: MatDialogRef<UserLoginPageComponent>) {
 
     this.loginFormGroup = this._formBuilder.group({
       'login': ['', Validators.required],
@@ -32,7 +37,7 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
       'login': ['', Validators.required],
       'email': ['', [Validators.required, Validators.email]],
       'password': ['', Validators.required],
-      'userType':this.userTypeControl
+      'userType': this.userTypeControl
     })
 
   }
@@ -40,47 +45,59 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  onLoginSubmit(){
+  onLoginSubmit() {
 
     this.showProgressBar = true;
     this.loginData = this.authService.getToken(this.loginFormGroup.value).subscribe({
-      next: (data)=>{
+      next: (data) => {
         this.showProgressBar = false;
-      console.log(data);
-    },
-    error: (err)=> {
-      this.showProgressBar = false;
-      const errorMessage = err.error.message;
-      const dialogRef = this.dialog.open(PopUpComponent, {
-        width: '550px',
-        data: { message: errorMessage, title: 'Error' }
+        console.log(data);
+      },
+      error: (err) => {
+        this.showProgressBar = false;
+        const errorMessage = err.error.message;
+        const dialogRef = this.dialog.open(PopUpComponent, {
+          width: '550px',
+          data: { message: errorMessage, title: 'Error' }
+        }
+        )
       }
-      )}
     });
 
   }
 
-  onRegisterSubmit(){
+  onRegisterSubmit() {
 
     this.showProgressBar = true;
+    this.regOn = true;
     this.registerData = this.authService.registerUser(this.registerFormGroup.value).subscribe({
-      next:(data)=>{
-      this.showProgressBar = false;
-      console.log(data);
-    },
-    error:(err)=>{
-      this.showProgressBar = false;
-      const errorMessage = err.error.message;
-      const dialogRef = this.dialog.open(PopUpComponent, {
-        width: '550px',
-        data: { message: errorMessage, title: 'Error' }
+      next: (data) => {
+        this.showProgressBar = false;
+        this.regOn = false;
+        const successMessage = "User Registration Successful";
+        const dialogRef = this.dialog.open(PopUpComponent, {
+          width: '550px',
+          data: { message: successMessage }
+        }).afterClosed().subscribe(()=>{
+          this.dialogRefMain.close();
+          this.router.navigate(['']);
+        })
+        console.log(data);
+      },
+      error: (err) => {
+        this.showProgressBar = false;
+        const errorMessage = err.error.message;
+        const dialogRef = this.dialog.open(PopUpComponent, {
+          width: '550px',
+          data: { message: errorMessage, title: 'Error' }
+        }
+        )
       }
-      )}
     });
 
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     if (this.loginData != null) {
       this.loginData.unsubscribe();
     }

@@ -31,7 +31,7 @@
           <button mat-raised-button color="primary" class="login-button" [disabled]="loginFormGroup.invalid">
             Login
           </button>
-          <div *ngIf="showProgressBar" class="spinner">
+          <div *ngIf="showProgressBar && logOn" class="spinner">
             <mat-spinner [diameter]="20"></mat-spinner><span>Logging In</span>
           </div>
         </form>
@@ -65,7 +65,7 @@
           <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="login-button" [disabled]="registerFormGroup.invalid">
             REGISTER
           </button>
-          <div *ngIf="showProgressBar" class="spinner">
+          <div *ngIf="showProgressBar && regOn" class="spinner">
             <mat-spinner [diameter]="20"></mat-spinner><span>Registering</span>
           </div>
         </form>
