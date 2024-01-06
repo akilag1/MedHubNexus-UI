@@ -50,9 +50,15 @@ mat-list-item:hover{
 
 .spinner{
   margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 4px;
   display: flex;
 }
 
 .spinner span{
   margin-left: 5px;
+}
+
+.submit-container{
+  display: flex;
 }

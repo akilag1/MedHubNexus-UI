@@ -28,12 +28,20 @@
             <input formControlName="password" matInput type="password" placeholder="Enter your password" name="password"
               required />
           </mat-form-field>
-          <button mat-raised-button color="primary" class="login-button" [disabled]="loginFormGroup.invalid">
+          <div class="submit-container">
+            <button mat-raised-button color="primary" class="login-button" [disabled]="loginFormGroup.invalid">
+              Login
+            </button>
+            <div *ngIf="showProgressBar && logOn" class="spinner">
+              <mat-spinner [diameter]="20"></mat-spinner><span>Logging In</span>
+            </div>
+          </div>
+          <!-- <button mat-raised-button color="primary" class="login-button" [disabled]="loginFormGroup.invalid">
             Login
           </button>
           <div *ngIf="showProgressBar && logOn" class="spinner">
             <mat-spinner [diameter]="20"></mat-spinner><span>Logging In</span>
-          </div>
+          </div> -->
         </form>
       </mat-card-content>
     </mat-card>
@@ -62,12 +70,20 @@
             <input formControlName="password" matInput type="password" placeholder="Enter your password" name="password"
               required />
           </mat-form-field>
-          <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="login-button" [disabled]="registerFormGroup.invalid">
+          <div class="submit-container">
+            <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="login-button" [disabled]="registerFormGroup.invalid">
+              REGISTER
+            </button>
+            <div *ngIf="showProgressBar && regOn" class="spinner">
+              <mat-spinner [diameter]="20"></mat-spinner><span>Registering</span>
+            </div>
+          </div>
+          <!-- <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="login-button" [disabled]="registerFormGroup.invalid">
             REGISTER
           </button>
           <div *ngIf="showProgressBar && regOn" class="spinner">
             <mat-spinner [diameter]="20"></mat-spinner><span>Registering</span>
-          </div>
+          </div> -->
         </form>
       </mat-card-content>
     </mat-card>

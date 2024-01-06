@@ -13,10 +13,7 @@
     </mat-form-field>
   </div>
   <div>
-    <mat-card class="example-result-card">
-      <mat-card-content>
-        <h2>Result</h2>
-    
+      <p>Price Range</p>
         <div class="example-label-container">
           <label id="example-name-label" class="example-name-label">Value</label>
           <label class="example-value-label">{{slider.value}}</label>
@@ -29,8 +26,6 @@
             [step]="step">
           <input matSliderThumb [(ngModel)]="value" #slider>
         </mat-slider>
-      </mat-card-content>
-    </mat-card>
   </div>
 
   <div>

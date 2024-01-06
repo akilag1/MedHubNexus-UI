@@ -15,9 +15,9 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
 
   public loginFormGroup: FormGroup;
   public registerFormGroup: FormGroup;
-  public showProgressBar:boolean = false;
+  public showProgressBar:boolean = false;//should be false
   public logOn:boolean = false;
-  public regOn:boolean = false;
+  public regOn:boolean = false;//should be false
   public userTypeControl = new FormControl('customer');
   public loginData: Subscription | null = null;
   public registerData: Subscription | null = null;
@@ -51,6 +51,16 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
     this.loginData = this.authService.getToken(this.loginFormGroup.value).subscribe({
       next: (data) => {
         this.showProgressBar = false;
+        this.regOn = false;
+        const successMessage = "User Login Successful";
+        const dialogRef = this.dialog.open(PopUpComponent, {
+          width: '550px',
+          data: { message: successMessage }
+        }).afterClosed().subscribe(()=>{
+          this.dialogRefMain.close();
+          this.loginFormGroup.reset();
+          this.router.navigate(['']);
+        })
         console.log(data);
       },
       error: (err) => {
@@ -79,13 +89,15 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
           width: '550px',
           data: { message: successMessage }
         }).afterClosed().subscribe(()=>{
-          this.dialogRefMain.close();
+          // this.dialogRefMain.close();
+          this.registerFormGroup.reset();
           this.router.navigate(['']);
         })
         console.log(data);
       },
       error: (err) => {
         this.showProgressBar = false;
+        console.log(err);
         const errorMessage = err.error.message;
         const dialogRef = this.dialog.open(PopUpComponent, {
           width: '550px',
