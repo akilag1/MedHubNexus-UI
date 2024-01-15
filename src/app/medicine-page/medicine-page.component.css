@@ -143,6 +143,7 @@
 .grid-row {
   display: flex;
   gap: 10px; /* Adjust the gap between items */
+  /* width: 100%; */
 }
 
 ::ng-deep mat-paginator .mat-paginator-container{

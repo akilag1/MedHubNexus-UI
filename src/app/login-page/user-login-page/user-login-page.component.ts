@@ -91,7 +91,7 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
         }).afterClosed().subscribe(()=>{
           // this.dialogRefMain.close();
           this.registerFormGroup.reset();
-          this.router.navigate(['']);
+          // this.router.navigate(['']);
         })
         console.log(data);
       },
