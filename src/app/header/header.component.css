@@ -193,3 +193,21 @@ a:focus {
 .profile-dropdown img{
   border-radius: 50%;
 }
+
+/* cart */
+
+.cart{
+  display: flex;
+}
+
+.cart-text{
+  color: white;
+}
+
+.cart-text p{
+  margin-bottom: 0;
+}
+
+.cart img{
+  margin-right: 10px;
+}
