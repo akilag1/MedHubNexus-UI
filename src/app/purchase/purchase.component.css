@@ -20,3 +20,13 @@
   .main-table tbody tr td {
     padding: 10px;
   }
+
+  .header{
+    margin-bottom: 15px;
+    background: #c1c1c1;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,19 @@
+<button mat-raised-button id="toggle-linear">
+  </button>
+  <mat-stepper #stepper>
+    <mat-step>
+   
+    </mat-step>
+    <mat-step  label="Fill out your address">
+     
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  

@@ -1,52 +1,49 @@
 <app-header></app-header>
 <div class="product-container">
-    <div class="column">
-      <img src="/assets/images/p-1.jpg" alt="Product Image" class="product-image">
-    </div>
-    <div class="column">
-      <div class="price">Price: $100</div>
-      <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-    </div>
-    <div class="column">
-      <div class="seller-details">
-        <h3>Seller Details</h3>
-        <p>Seller: John Doe</p>
-        <p>Contact: john@example.com</p>
-      </div>
+  <div class="column">
+    <img src="/assets/images/p-1.jpg" alt="Product Image" class="product-image">
+  </div>
+  <div class="column">
+    <div class="price">Price: $100</div>
+    <div class="description">Description</div>
+    <button class="mat-raised-button">Add to Cart</button>
+    <button class="mat-raised-button">Buy Now</button>
+  </div>
+  <div class="column">
+    <div class="seller-details">
+      <h3>Seller Details</h3>
+      <p>Seller: John Doe</p>
+      <p>Contact: john@example.com</p>
     </div>
   </div>
-  
+</div>
+  <!-- product-details.component.html -->
+
+  <!-- ... (previous content) ... -->
+
   <div class="reviews-section">
-    
-    <!-- product-details.component.html -->
-
-<!-- ... (previous content) ... -->
-
-<div class="reviews-section">
     <h2>Reviews/Comments</h2>
     <div class="review-form">
       <h3>Add a Review</h3>
       <form>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-  
+
         <label for="comment">Comment:</label>
         <textarea id="comment" name="comment" rows="4" required></textarea>
-  
+
         <button type="submit">Submit</button>
       </form>
     </div>
-  
+
     <div class="review-list">
       <!-- Sample review, you can dynamically populate this section with Angular -->
       <div class="review">
         <h4>John Doe</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.</p>
       </div>
     </div>
   </div>
-  
 
-  </div>
-  <app-footer></app-footer>
-  
+<app-footer></app-footer>

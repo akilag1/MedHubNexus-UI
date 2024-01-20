@@ -35,4 +35,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  onCartClick(){
+    console.log("on cart click");
+  }
+
 }

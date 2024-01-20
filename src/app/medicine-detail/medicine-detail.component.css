@@ -28,10 +28,12 @@
   
   .seller-details {
     text-align: right;
+    background-color: #ccc;
   }
   
   .reviews-section {
     margin: 20px;
+    width: 80%;
   }
 
   

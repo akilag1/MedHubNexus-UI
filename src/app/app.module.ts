@@ -32,6 +32,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatStepperModule } from '@angular/material/stepper';
 import { DatePipe } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
@@ -64,6 +65,8 @@ import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.compo
 import { PurchaseComponent } from './purchase/purchase.component';
 import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-details/pharmacy-dash-details.component';
 import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-home/pharmacy-dash-home-verify/pharmacy-dash-home-verify.component';
+import { CartSidenavComponent } from './cart/cart-sidenav/cart-sidenav.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +106,9 @@ import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard
     PharmacyDetailComponent,
     PurchaseComponent,
     PharmacyDashDetailsComponent,
-    PharmacyDashHomeVerifyComponent
+    PharmacyDashHomeVerifyComponent,
+    CartSidenavComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -130,6 +135,7 @@ import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule
