@@ -4,9 +4,9 @@
     <div class="menu">
       <!-- Add your menu items here -->
       <div class="user_details">
-        <img width="150" height="150" src="../../assets/images/admin_dp.jpg" alt="admin_picture">
+        <img width="150" height="150" src="../../assets/images/pharmacy1.jpg" alt="Pharmacy_picture">
         <h3>Hello</h3>
-        <h3></h3>
+        <h3>Pharmacy!</h3>
       </div>
     </div>
 
@@ -14,7 +14,22 @@
     <div class="content">
       <h2></h2>
       <hr>
-      <router-outlet></router-outlet>
+      
+      <section class="health_section layout_padding">
+        <div class="health_carousel-container">
+          <h2 class="text-uppercase">
+            MEDICINES</h2>
+          <div class="grid-container">
+            <div class="grid-row" *ngFor="let row of rows">
+              <app-medicine-thumbnail *ngFor="let item of row"></app-medicine-thumbnail>
+            </div>
+          </div>
+          <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
+          <mat-paginator [length]="totalCount" [pageSizeOptions]="[8,16,32]" showFirstLastButtons
+            (page)="onPageChange($event)"></mat-paginator>
+        </div>
+      </section>
+
     </div>
   </div>
 <app-footer></app-footer>

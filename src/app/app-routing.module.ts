@@ -20,6 +20,7 @@ import { CustomerDashboardComponent } from './dashboards/customer-dashboard/cust
 import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/customer-dash-home/customer-dash-home.component';
 import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
 import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
+import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
 
 const routes: Routes = [
 
@@ -54,6 +55,9 @@ const routes: Routes = [
     ]
   },
   {path: 'medicine/:id', component: MedicineDetailComponent},
+  {path: 'pharmacy/:id', component: PharmacyDetailComponent, children:[
+    // { path: '', component: MedicinePageComponent },
+  ]},
   { path: '**', component: HomePageComponent }
 
 ];
