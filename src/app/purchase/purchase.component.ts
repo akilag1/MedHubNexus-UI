@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-purchase',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchaseComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    private dialogRef: MatDialogRef<PurchaseComponent>
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  onProceed(){
+   this.dialogRef.close()
+  }
+
+  onCancel(){
+    this.dialogRef.close();
   }
 
 }

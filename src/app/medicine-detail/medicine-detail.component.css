@@ -1,91 +1,125 @@
 /* product-details.component.css */
 
 .product-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-  }
-  
-  .column-1 {
-    flex: 2;
-    padding: 10px;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
 
-  .column-2 {
-    flex: 1;
-    padding: 10px;
-  }
+.column-1 {
+  flex: 2;
+  padding: 10px;
+}
 
-  .column-3 {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .product-image {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .price {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .description {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  .seller-details {
-    text-align: right;
-    background-color: #ccc;
-  }
-  
-  .reviews-section {
-    margin: 20px;
-    width: 80%;
-  }
+.column-2 {
+  flex: 1;
+  padding: 10px;
+}
 
-  
-  /* product-details.component.css */
+.column-3 {
+  flex: 1;
+  padding: 10px;
+}
+
+.product-image {
+  width: 400px;
+  height: 400px;
+  /* height: auto; */
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.seller-details {
+  text-align: right;
+  background-color: #ccc;
+}
+
+.reviews-section {
+  margin: 20px;
+  width: 80%;
+}
+
+
+/* product-details.component.css */
 
 /* ... (previous styles) ... */
 
 .reviews-section {
-    margin: 20px;
-  }
-  
-  .review-form {
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: grid;
-    gap: 10px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .review-list {
-    border-top: 1px solid #ccc;
-    margin-top: 20px;
-  }
-  
-  .review {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .review h4 {
-    margin-bottom: 5px;
-  }
-  
-  .main-container{
-    padding: 20px;
-  }
+  margin: 20px;
+}
+
+.review-form {
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.review-list {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.review {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review h4 {
+  margin-bottom: 5px;
+}
+
+.main-container {
+  padding: 80px;
+}
+
+/* image gallery */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.card {
+  background-color: #fff;
+  padding: 14px;
+  border: none
+}
+
+.demo {
+  width: 100%
+}
+
+ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin-bottom: 0
+}
+
+li {
+  display: block;
+  float: left;
+  margin-right: 6px;
+  cursor: pointer
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%
+} */

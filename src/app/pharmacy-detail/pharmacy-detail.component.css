@@ -1,3 +1,7 @@
+.container{
+  display: flex;
+}
+
 .owl-carousel{
     display: flex;
     justify-content: space-between;
@@ -148,4 +152,8 @@
 
 ::ng-deep mat-paginator .mat-paginator-container{
   background-color: #f0efef;
+}
+
+.content{
+  /* width: 70%; */
 }

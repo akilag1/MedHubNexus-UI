@@ -63,13 +63,13 @@
                 </a>
               </div> -->
 
-              <mat-drawer-container class="example-container" autosize>
+              <!-- <mat-drawer-container class="example-container" autosize>
                 <mat-drawer #drawer class="example-sidenav" mode="side">
-                  <p style="color: white;">Auto-resizing sidenav</p>
+                  <div style="height: 50px; width: 50px;"></div>
                 </mat-drawer>
-              </mat-drawer-container>
+              </mat-drawer-container> -->
               
-              <div class="cart" (click)="drawer.toggle()">
+              <div class="cart">
                 <img src="/assets/icons/cart1.png" width="40px"
                 height="40px" alt="cart">
                 <div class="cart-text">
@@ -77,6 +77,7 @@
                   <p>LKR 2000</p>
                 </div>
               </div>
+              
               <div class="profile-dropdown">
                 <img width="40" height="40" src="/assets/images/user3.jpg" [matMenuTriggerFor]="profile_menu">
                 <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
