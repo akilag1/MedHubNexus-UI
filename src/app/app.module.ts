@@ -33,6 +33,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatBadgeModule } from '@angular/material/badge';
 import { DatePipe } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MedicinePageComponent } from './medicine-page/medicine-page.component';
@@ -67,6 +68,7 @@ import { PharmacyDashDetailsComponent } from './dashboards/pharmacy-dashboard/ph
 import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard/pharmacy-dash-home/pharmacy-dash-home-verify/pharmacy-dash-home-verify.component';
 import { CartSidenavComponent } from './cart/cart-sidenav/cart-sidenav.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CartComponent } from './cart/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +110,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     PharmacyDashDetailsComponent,
     PharmacyDashHomeVerifyComponent,
     CartSidenavComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -136,6 +139,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatStepperModule,
+    MatBadgeModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserLoginPageComponent } from '../login-page/user-login-page/user-login-page.component';
 import { CommonService } from '../services/common-service';
 import { PrescriptionComponent } from '../prescription/prescription.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
   public isAdmin:boolean = false;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
     ) { }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class HeaderComponent implements OnInit {
 
   onLogBtnPressed(){
     const dialogRef = this.dialog.open(UserLoginPageComponent, {
-      height: '480px',
+      height: '520px',
       width: '650px',
       panelClass: 'log-reg-container'
     });
@@ -36,7 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onCartClick(){
-    console.log("on cart click");
+    this.router.navigate(['cart']);
   }
 
 }

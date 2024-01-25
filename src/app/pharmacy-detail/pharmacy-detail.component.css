@@ -141,6 +141,7 @@
 /* grid.component.css */
 .grid-container {
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -156,4 +157,29 @@
 
 .content{
   /* width: 70%; */
+}
+
+.menu{
+  margin-top: 117px;
+  margin-right: 30px;
+}
+
+.user_details{
+  text-align: center;
+  background-color: #dad3d3;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.user_details h3{
+  margin-top: 20px;
+}
+
+.user_details img{
+  border-radius: 10px;
+}
+
+.pharamacy-details p{
+  margin-bottom: 0;
+  text-align: left;
 }

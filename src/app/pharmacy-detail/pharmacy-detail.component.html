@@ -5,8 +5,11 @@
     <!-- Add your menu items here -->
     <div class="user_details">
       <img width="150" height="150" src="../../assets/images/pharmacy1.jpg" alt="Pharmacy_picture">
-      <h3>Hello</h3>
-      <h3>Pharmacy!</h3>
+      <h3>PHARMACY1</h3>
+      <div class="pharamacy-details">
+        <p><strong>Location: </strong> Colombo</p>
+        <p><strong>License: </strong>#12345</p>
+      </div>
     </div>
   </div>
 
@@ -14,8 +17,6 @@
   <div class="content">
     <section class="health_section layout_padding">
       <div class="health_carousel-container">
-        <h2 class="text-uppercase">
-          MEDICINES</h2>
         <div class="grid-container">
           <div class="grid-row" *ngFor="let row of rows">
             <app-medicine-thumbnail *ngFor="let item of row"></app-medicine-thumbnail>

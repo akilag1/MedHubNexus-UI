@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="main-container">
+    <div class="header">
+        <span>PURCHASE MEDICINE</span>
+    </div>
+    <hr>
+    <div>
+        <div class="remove-all-btn">
+            <button mat-flat-button color="warn" fxFlex="20%">Remove All</button>
+        </div>
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th>MEDICINE</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>SUBTOTAL</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Medicine1</td>
+                    <td>LKR 100.00</td>
+                    <td><input matInput type="number" id="quantity"
+                         name="quantity" min="1" max="5" style="width: 50px;" ></td>
+                    <td>LKR 200.00 </td>
+                    <td>
+                        <img src="../../assets/icons/bin1.png" matTooltip="remove" alt="delete"
+                        width="25px" height="25px">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="main-btns">
+            <button mat-flat-button color="primary" fxFlex="20%" (click)="onProceedClick()">Proceed</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-purchase',
@@ -9,7 +10,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class PurchaseComponent implements OnInit {
 
   constructor( 
-    private dialogRef: MatDialogRef<PurchaseComponent>
+    private dialogRef: MatDialogRef<PurchaseComponent>,
+    private router:Router
     ) { }
 
   ngOnInit(): void {
@@ -17,6 +19,7 @@ export class PurchaseComponent implements OnInit {
 
   onProceed(){
    this.dialogRef.close()
+   this.router.navigate(['checkout'])
   }
 
   onCancel(){

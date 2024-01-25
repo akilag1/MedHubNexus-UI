@@ -1,60 +1,60 @@
 <header class="header_section">
-      <div class="container">
-        <div class="top_contact-container">
-          <div class="tel_container">
-            <a href="#">
-              <img src="/assets/images/telephone-symbol-button.png" alt=""> Call : +94 111234567 
-            </a>
-          </div>
-          <div class="social-container">
-            <a href="#">
-              <img src="/assets/images/fb.png" alt="" class="s-1">
-            </a>
-            <a href="#">
-              <img src="/assets/images/twitter.png" alt="" class="s-2">
-            </a>
-            <a href="#">
-              <img src="/assets/images/instagram.png" alt="" class="s-3">
-            </a>
-          </div>
-        </div>
+  <div class="container">
+    <div class="top_contact-container">
+      <div class="tel_container">
+        <a href="#">
+          <img src="/assets/images/telephone-symbol-button.png" alt=""> Call : +94 111234567
+        </a>
       </div>
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3 row">
-          <a class="navbar-brand col-md-1" routerLink="">
-            <img src="/assets/images/logo.png" alt="">
-            <span>
-              MedHubNexus
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <div class="social-container">
+        <a href="#">
+          <img src="/assets/images/fb.png" alt="" class="s-1">
+        </a>
+        <a href="#">
+          <img src="/assets/images/twitter.png" alt="" class="s-2">
+        </a>
+        <a href="#">
+          <img src="/assets/images/instagram.png" alt="" class="s-3">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container pt-3 row">
+      <a class="navbar-brand col-md-1" routerLink="">
+        <img src="/assets/images/logo.png" alt="">
+        <span>
+          MedHubNexus
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 150px;">
-            <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active" routerLinkActive="is-active">
-                  <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/medicine"> Medicine </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/pharmacy"> Pharmacies </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/about"> About </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/contact">Contact us</a>
-                </li>
-              </ul>
-              <div class="prescription-btn">
-                <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
-              </div>
-              <!-- <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 150px;">
+        <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
+          <ul class="navbar-nav  ">
+            <li class="nav-item active" routerLinkActive="is-active">
+              <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/medicine"> Medicine </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/pharmacy"> Pharmacies </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about"> About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contact">Contact us</a>
+            </li>
+          </ul>
+          <div class="prescription-btn">
+            <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
+          </div>
+          <!-- <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()">
                 <a >
                   <img src="/assets/images/user.png" alt="">
                   <span>
@@ -63,22 +63,22 @@
                 </a>
               </div> -->
 
-              <!-- <mat-drawer-container class="example-container" autosize>
+          <!-- <mat-drawer-container class="example-container" autosize>
                 <mat-drawer #drawer class="example-sidenav" mode="side">
                   <div style="height: 50px; width: 50px;"></div>
                 </mat-drawer>
               </mat-drawer-container> -->
-              
-              <div class="cart">
-                <img src="/assets/icons/cart1.png" width="40px"
-                height="40px" alt="cart">
-                <div class="cart-text">
-                  <p>CART Items</p>
-                  <p>LKR 2000</p>
-                </div>
-              </div>
-              
-              <div class="profile-dropdown">
+
+          <div class="cart" (click)="onCartClick()">
+            <img src="/assets/icons/cart1.png" width="40px" height="40px" alt="cart">
+            <div class="cart-badge"><p>10</p></div>
+            <div class="cart-text">
+              <p>CART Items</p>
+              <p>LKR 2000</p>
+            </div>
+          </div>
+
+          <!-- <div class="profile-dropdown">
                 <img width="40" height="40" src="/assets/images/user3.jpg" [matMenuTriggerFor]="profile_menu">
                 <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
                   <p style="padding-left: 16px;">Hi Akila</p>
@@ -86,10 +86,10 @@
                   <button mat-menu-item routerLink="customer-dashboard/orders">Orders</button>
                   <button mat-menu-item>Sign Out</button>
                 </mat-menu>
-              </div>
-            </div>
-          </div>
-
-        </nav>
+              </div> -->
+        </div>
       </div>
-    </header>
+
+    </nav>
+  </div>
+</header>

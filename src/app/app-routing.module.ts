@@ -21,6 +21,8 @@ import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/custo
 import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
 import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
 import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
+import { CartComponent } from './cart/cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -58,6 +60,8 @@ const routes: Routes = [
   {path: 'pharmacy/:id', component: PharmacyDetailComponent, children:[
     // { path: '', component: MedicinePageComponent },
   ]},
+  {path: 'cart', component:CartComponent},
+  {path: 'checkout', component:CheckoutComponent},
   { path: '**', component: HomePageComponent }
 
 ];

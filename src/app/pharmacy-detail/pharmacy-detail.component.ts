@@ -18,7 +18,7 @@ export class PharmacyDetailComponent implements OnInit {
 
   initializeGrid(): void {
     const totalItems = 7;
-    const itemsPerRow = 4;
+    const itemsPerRow = 3;
     // const rows = [];
 
     let remainingItems = totalItems;

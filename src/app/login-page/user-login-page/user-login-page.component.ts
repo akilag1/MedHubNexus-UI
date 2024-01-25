@@ -109,6 +109,10 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
 
   }
 
+  closeDialog(){
+    this.dialogRefMain.close();
+  }
+
   ngOnDestroy() {
     if (this.loginData != null) {
       this.loginData.unsubscribe();

@@ -1,0 +1,23 @@
+.main-container {
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.billing-form {
+    width: 90%;
+    margin: auto;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+}
+
+.mat-stepper-horizontal {
+    margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}

@@ -1,19 +1,142 @@
-<button mat-raised-button id="toggle-linear">
-  </button>
+<app-header></app-header>
+<div class="main-container">
   <mat-stepper #stepper>
-    <mat-step>
-   
+    <mat-step label="Billing">
+  
+    <div class="billing-form">
+        <form [formGroup]="createListingGroup" (ngSubmit)="onFormSubmit()">
+          <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Drug Name</mat-label>
+                <input formControlName="drugName" matInput placeholder="Enter your username" name="username" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Manufacturer Name</mat-label>
+                <input formControlName="manuName" matInput type="password" placeholder="Enter your password"
+                  name="password" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Price</mat-label>
+                <input formControlName="price" matInput type="password" placeholder="Enter your password"
+                  name="password" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Qunatity</mat-label>
+                <input formControlName="quantity" matInput type="password" placeholder="Enter your password"
+                  name="password" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field appearance="outline" class="from-date">
+                <mat-label>Manufactured Date</mat-label>
+                <input formControlName="manuDate" [matDatepicker]="frompicker"
+                  style="height: 14px; margin-top: -5px; display: block;" matInput readonly>
+                <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
+                <mat-datepicker #frompicker color="primary"></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field appearance="outline" class="start-date">
+                <mat-label>Expire Date</mat-label>
+                <input formControlName="expDate" [matDatepicker]="topicker"
+                  style="height: 14px; margin-top: -5px; display: block;" matInput readonly>
+                <mat-datepicker-toggle matSuffix [for]="topicker"></mat-datepicker-toggle>
+                <mat-datepicker #topicker color="primary"></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <div class="btn-container">
+            <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.next()">
+              Next
+            </button>
+          </div>
+        </form>
+    </div>
+
     </mat-step>
-    <mat-step  label="Fill out your address">
-     
+    <mat-step label="Shipping">
+
+      <div class="billing-form">
+        <form [formGroup]="createListingGroup" (ngSubmit)="onFormSubmit()">
+          <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Drug Name</mat-label>
+                <input formControlName="drugName" matInput placeholder="Enter your username" name="username" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Manufacturer Name</mat-label>
+                <input formControlName="manuName" matInput type="password" placeholder="Enter your password"
+                  name="password" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Price</mat-label>
+                <input formControlName="price" matInput type="password" placeholder="Enter your password"
+                  name="password" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Qunatity</mat-label>
+                <input formControlName="quantity" matInput type="password" placeholder="Enter your password"
+                  name="password" />
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <div class="btn-container">
+            <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.previous()">
+              Back
+            </button>
+            <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.next()">
+              Next
+            </button>
+          </div>
+        </form>
+    </div>
+  
     </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+    <mat-step label="Info">
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <mat-card>
+          <mat-card-content>
+            <p>INFO</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="btn-container">
+        <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.previous()">
+          Back
+        </button>
+        <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.next()">
+          Next
+        </button>
+      </div>
+    </mat-step>
+    <mat-step label="Payment">
+      <div>
+        <mat-card>
+          <mat-card-content>
+            <p>Payment</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="btn-container">
+        <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.previous()">
+          Back
+        </button>
       </div>
     </mat-step>
   </mat-stepper>
-  
+</div>
+<app-footer></app-footer>

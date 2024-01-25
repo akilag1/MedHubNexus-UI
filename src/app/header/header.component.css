@@ -114,6 +114,10 @@ a:focus {
   border-radius: 0;
 }
 
+.login_btn-contanier{
+  margin-right: 1rem;
+}
+
 .login_btn-contanier a {
   text-transform: uppercase;
   color: #ffffff;
@@ -198,6 +202,7 @@ a:focus {
 
 .cart{
   display: flex;
+  cursor: pointer;
 }
 
 .cart-text{
@@ -209,7 +214,7 @@ a:focus {
 }
 
 .cart img{
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 mat-drawer-content {
@@ -227,3 +232,11 @@ mat-drawer-content {
   right: 0;
   background: #eee;
 } */
+
+.cart-badge{
+  height: 20px;
+  width: 20px;
+  background-color: azure;
+  margin-right: 10px;
+  border-radius: 50%;
+}

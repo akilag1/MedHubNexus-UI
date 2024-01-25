@@ -38,8 +38,22 @@
 }
 
 .seller-details {
-  text-align: right;
+  text-align: center;
   background-color: #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  /* height: 4rem; */
+}
+
+.seller-details h3{
+  background-color: #dddddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.seller-details p{
+  text-align: left;
 }
 
 .reviews-section {
@@ -93,8 +107,6 @@ textarea {
 
 /* image gallery */
 
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-
 .card {
   background-color: #fff;
   padding: 14px;
@@ -122,4 +134,25 @@ img {
   display: block;
   height: auto;
   width: 100%
-} */
+}
+
+.add-to-cart-btn{
+  margin-right: 5px;
+}
+
+.medicine-status{
+  height: 40px;
+  width: 100px;
+  background-color: chartreuse;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.medicine-status h4{
+  padding-top: 5px;
+}
+
+.buy-btn-container{
+  margin-top: 25px;
+}
