@@ -4,7 +4,7 @@
     margin: auto;
 }
 
-.billing-form {
+.shipping-form {
     width: 90%;
     margin: auto;
 }
@@ -14,10 +14,69 @@
     justify-content: end;
 }
 
+.btn-container button{
+    margin-left: 5px;
+}
+
 .mat-stepper-horizontal {
     margin-top: 8px;
 }
 
 .mat-mdc-form-field {
     margin-top: 16px;
+}
+
+.info-container{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.main-table {
+    width: 100%;
+    background-color: white;
+}
+
+.main-table thead {
+    background-color: #e4e5e6;
+}
+
+.main-table thead tr th {
+    padding: 10px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.main-table tbody tr {
+    border-bottom: 1px solid #e4e5e6;
+}
+
+.main-table tbody tr td {
+    padding: 10px;
+}
+
+.payment-container{
+    background-color: #e4e5e6;
+    width: 90%;
+    height: 400px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.payment-container h5{
+    padding-top: 50px;
+}
+
+.payment-box-container{
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.payment-box{
+    background-color: white;
+    width: 80%;
+    height: 150px;
 }

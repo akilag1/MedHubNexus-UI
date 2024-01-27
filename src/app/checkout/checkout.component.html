@@ -2,137 +2,115 @@
 <div class="main-container">
   <mat-stepper #stepper>
     <mat-step label="Billing">
-  
-    <div class="billing-form">
-        <form [formGroup]="createListingGroup" (ngSubmit)="onFormSubmit()">
+
+      <div class="shipping-form">
+        <form [formGroup]="shippingGroup" (ngSubmit)="onFormSubmit()">
           <mat-grid-list cols="3" rowHeight="2:1">
             <mat-grid-tile>
               <mat-form-field class="full-width">
-                <mat-label>Drug Name</mat-label>
-                <input formControlName="drugName" matInput placeholder="Enter your username" name="username" />
+                <mat-label>First Name</mat-label>
+                <input formControlName="fname" matInput placeholder="First Name" name="firstName" />
               </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-form-field class="full-width">
-                <mat-label>Manufacturer Name</mat-label>
-                <input formControlName="manuName" matInput type="password" placeholder="Enter your password"
-                  name="password" />
+                <mat-label>Last Name</mat-label>
+                <input formControlName="lname" matInput type="text" placeholder="Last Name" name="lastName" />
               </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-form-field class="full-width">
-                <mat-label>Price</mat-label>
-                <input formControlName="price" matInput type="password" placeholder="Enter your password"
-                  name="password" />
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput type="email" placeholder="Email" name="email" />
               </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-form-field class="full-width">
-                <mat-label>Qunatity</mat-label>
-                <input formControlName="quantity" matInput type="password" placeholder="Enter your password"
-                  name="password" />
+                <mat-label>Address Line 1</mat-label>
+                <input formControlName="addr1" matInput type="text" placeholder="Address Line 1" name="addr1" />
               </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-form-field appearance="outline" class="from-date">
-                <mat-label>Manufactured Date</mat-label>
-                <input formControlName="manuDate" [matDatepicker]="frompicker"
-                  style="height: 14px; margin-top: -5px; display: block;" matInput readonly>
-                <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
-                <mat-datepicker #frompicker color="primary"></mat-datepicker>
+              <mat-form-field class="full-width">
+                <mat-label>Address Line 2</mat-label>
+                <input formControlName="addr2" matInput type="text" placeholder="Address Line 2" name="addr2" />
               </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-form-field appearance="outline" class="start-date">
-                <mat-label>Expire Date</mat-label>
-                <input formControlName="expDate" [matDatepicker]="topicker"
-                  style="height: 14px; margin-top: -5px; display: block;" matInput readonly>
-                <mat-datepicker-toggle matSuffix [for]="topicker"></mat-datepicker-toggle>
-                <mat-datepicker #topicker color="primary"></mat-datepicker>
+              <mat-form-field class="full-width">
+                <mat-label>City</mat-label>
+                <input formControlName="city" matInput type="text" placeholder="City" name="city" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Postal Code</mat-label>
+                <input formControlName="pcode" matInput type="text" placeholder="Postal Code" name="pcode" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="full-width">
+                <mat-label>Phone Number</mat-label>
+                <input formControlName="pnumber" matInput type="text" placeholder="Phone Number" name="pnumber" />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile style="justify-content: start;">
+              <mat-form-field class="full-width">
+                <mat-label>Special Notes</mat-label>
+                <input formControlName="notes" matInput type="text" placeholder="Special Notes " name="notes" />
               </mat-form-field>
             </mat-grid-tile>
           </mat-grid-list>
           <div class="btn-container">
-            <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.next()">
+            <button mat-raised-button color="primary" class="login-button" [disabled]="shippingGroup.invalid"
+              (click)="stepper.next()">
               Next
             </button>
           </div>
         </form>
-    </div>
+      </div>
 
-    </mat-step>
-    <mat-step label="Shipping">
-
-      <div class="billing-form">
-        <form [formGroup]="createListingGroup" (ngSubmit)="onFormSubmit()">
-          <mat-grid-list cols="3" rowHeight="2:1">
-            <mat-grid-tile>
-              <mat-form-field class="full-width">
-                <mat-label>Drug Name</mat-label>
-                <input formControlName="drugName" matInput placeholder="Enter your username" name="username" />
-              </mat-form-field>
-            </mat-grid-tile>
-            <mat-grid-tile>
-              <mat-form-field class="full-width">
-                <mat-label>Manufacturer Name</mat-label>
-                <input formControlName="manuName" matInput type="password" placeholder="Enter your password"
-                  name="password" />
-              </mat-form-field>
-            </mat-grid-tile>
-            <mat-grid-tile>
-              <mat-form-field class="full-width">
-                <mat-label>Price</mat-label>
-                <input formControlName="price" matInput type="password" placeholder="Enter your password"
-                  name="password" />
-              </mat-form-field>
-            </mat-grid-tile>
-            <mat-grid-tile>
-              <mat-form-field class="full-width">
-                <mat-label>Qunatity</mat-label>
-                <input formControlName="quantity" matInput type="password" placeholder="Enter your password"
-                  name="password" />
-              </mat-form-field>
-            </mat-grid-tile>
-          </mat-grid-list>
-          <div class="btn-container">
-            <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.previous()">
-              Back
-            </button>
-            <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.next()">
-              Next
-            </button>
-          </div>
-        </form>
-    </div>
-  
     </mat-step>
     <mat-step label="Info">
-      <div>
-        <mat-card>
-          <mat-card-content>
-            <p>INFO</p>
-          </mat-card-content>
-        </mat-card>
+      <div class="info-container">
+        <table class="main-table">
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Shipping</th>
+              <th>Address</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product</td>
+              <td>Standard Shipping</td>
+              <td>A50, Lotus Lane, Kandy</td>
+              <th>100 LKR</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="btn-container">
-        <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.previous()">
+        <button mat-raised-button color="primary" class="login-button" (click)="stepper.previous()">
           Back
         </button>
-        <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.next()">
-          Next
+        <button mat-raised-button color="primary" class="login-button" (click)="stepper.next()">
+          Continue
         </button>
       </div>
     </mat-step>
     <mat-step label="Payment">
-      <div>
-        <mat-card>
-          <mat-card-content>
-            <p>Payment</p>
-          </mat-card-content>
-        </mat-card>
+      <div class="payment-container">
+        <h5>Select Payment Type</h5>
+        <div class="payment-box-container">
+          <div class="payment-box"></div>
+          <div class="payment-box"></div>
+        </div>
       </div>
       <div class="btn-container">
-        <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid" (click)="stepper.previous()">
+        <button mat-raised-button color="primary" class="login-button" (click)="stepper.previous()">
           Back
         </button>
       </div>

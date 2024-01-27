@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerDashHomeComponent implements OnInit {
 
+  public boxTitle1 = "ORDERS"
+  public boxTitle2 = "INBOX"
+
   constructor() { }
 
   ngOnInit(): void {

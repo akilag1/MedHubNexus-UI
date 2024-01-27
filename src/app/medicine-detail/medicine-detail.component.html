@@ -16,13 +16,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/assets/images/p-1.jpg" alt="Product Image" class="product-image">
+            <img src="/assets/images/medicines.jpg" alt="Product Image" class="product-image">
           </div>
           <div class="carousel-item">
-            <img src="/assets/images/p-1.jpg" alt="Product Image" class="product-image">
+            <img src="/assets/images/medicines.jpg" alt="Product Image" class="product-image">
           </div>
           <div class="carousel-item">
-            <img src="/assets/images/p-1.jpg" alt="Product Image" class="product-image">
+            <img src="/assets/images/medicines.jpg" alt="Product Image" class="product-image">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -46,8 +46,8 @@
       <div class="price">Price: $100</div>
       <div class="description">Description</div>
       <div class="buy-btn-container">
-        <button class="mat-raised-button add-to-cart-btn">Add to Cart</button>
-        <button class="mat-raised-button buy-now-btn">Buy Now</button>
+        <button id="btn_add_to_cart" class="btn add-to-cart-btn btn-primary">Add to Cart</button>
+        <button class="btn buy-now-btn btn-primary" (click)="onBuyNowClick()">Buy Now</button>
       </div>
     </div>
     <div class="column-3">
@@ -78,13 +78,18 @@
       </form> -->
 
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" formControlName="name" required>
+
+        <mat-form-field class="full-width">
+          <mat-label>Name:</mat-label>
+          <input formControlName="name" matInput placeholder="Name" name="name" required />
+        </mat-form-field>
       
-        <label for="comment">Comment:</label>
-        <textarea id="comment" name="comment" formControlName="comment" rows="4" required></textarea>
+        <mat-form-field class="full-width">
+          <mat-label>Comment</mat-label>
+          <input formControlName="comment" matInput name="comment" required />
+        </mat-form-field>
       
-        <button type="submit" [disabled]="myForm.invalid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit</button>
       </form>
       
 

@@ -8,18 +8,20 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
 
-  public createListingGroup: FormGroup;
+  public shippingGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
 
-    this.createListingGroup = this._formBuilder.group({
-      'drugName': '',
-      'manuName': '',
-      'manuDate': '',
-      'expDate': '',
-      'quantity': '',
-      'price': '',
-      thumbnails: this._formBuilder.array([])
+    this.shippingGroup = this._formBuilder.group({
+      'fname': '',
+      'lname': '',
+      'email': '',
+      'addr1': '',
+      'addr2': '',
+      'city': '',
+      'pcode': '',
+      'pnumber': '',
+      'notes': ''
     })
 
    }
@@ -28,7 +30,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   onFormSubmit(){
-    console.log(this.createListingGroup.value);
+    console.log(this.shippingGroup.value);
   }
 
 }

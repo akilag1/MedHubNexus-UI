@@ -22,9 +22,10 @@
 }
 
 .product-image {
-  width: 400px;
-  height: 400px;
+  /* width: 400px; */
+  height: 450px;
   /* height: auto; */
+  border-radius: 10px;
 }
 
 .price {
@@ -155,4 +156,31 @@ img {
 
 .buy-btn-container{
   margin-top: 25px;
+}
+
+.buy-btn-container button{
+  width: 110px;
+}
+
+#btn_add_to_cart{
+  background-color: orange;
+  border: 1px solid orange;
+}
+
+#btn_add_to_cart:hover{
+  background-color: rgb(226, 148, 3);
+  border: 1px solid rgb(226, 148, 3);
+}
+
+#btn_add_to_cart:focus,#btn_add_to_cart:active {
+  /* outline: rgb(226, 148, 3) !important; */
+  box-shadow: 0 0 0 3px rgb(255, 192, 75);
+}
+
+form button{
+  width: 110px;
+}
+
+.carousel-inner{
+  width: 90%;
 }
