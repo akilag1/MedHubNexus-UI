@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable} from 'rxjs';
+import { Observable, Subject} from 'rxjs';
 
 export interface AuthResponseData {
   id: number,
@@ -14,6 +14,8 @@ export interface AuthResponseData {
   providedIn: 'root',
 })
 export class AuthService {
+
+  private loginStatus = new Subject<boolean>();
 
   private readonly TOKEN_KEY = 'token';
   // private apiUrl = 'http://your-backend-api-url';
@@ -34,6 +36,14 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return !!this.token;
+  }
+
+  setLoginStatusClicked(status: boolean) {
+    this.loginStatus.next(status);
+  }
+
+  getLoginStatusClicked() {
+    return this.loginStatus.asObservable();
   }
 
   getToken(formData:any):Observable<AuthResponseData> {

@@ -54,14 +54,14 @@
           <div class="prescription-btn">
             <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
           </div>
-          <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()">
-                <a >
-                  <img src="/assets/images/user.png" alt="">
-                  <span>
-                    Login/Register
-                  </span>
-                </a>
-              </div>
+          <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()" *ngIf="!loginStatus">
+            <a>
+              <img src="/assets/images/user.png" alt="">
+              <span>
+                Login/Register
+              </span>
+            </a>
+          </div>
 
           <!-- <mat-drawer-container class="example-container" autosize>
                 <mat-drawer #drawer class="example-sidenav" mode="side">
@@ -69,24 +69,24 @@
                 </mat-drawer>
               </mat-drawer-container> -->
 
-          <!-- <div class="cart" (click)="onCartClick()">
+          <div class="cart" (click)="onCartClick()" *ngIf="loginStatus">
             <img src="/assets/icons/cart1.png" width="40px" height="40px" alt="cart">
             <div class="cart-badge"><p>10</p></div>
             <div class="cart-text">
               <p>CART Items</p>
               <p>LKR 2000</p>
             </div>
-          </div> -->
+          </div>
 
-          <!-- <div class="profile-dropdown">
+          <div class="profile-dropdown" *ngIf="loginStatus">
                 <img width="40" height="40" src="/assets/images/user3.jpg" [matMenuTriggerFor]="profile_menu">
                 <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
                   <p style="padding-left: 16px;">Hi Akila</p>
                   <button mat-menu-item routerLink="customer-dashboard">Profile</button>
                   <button mat-menu-item routerLink="customer-dashboard/orders">Orders</button>
-                  <button mat-menu-item>Sign Out</button>
+                  <button mat-menu-item (click)="onSignoutClick()">Sign Out</button>
                 </mat-menu>
-              </div> -->
+              </div>
         </div>
       </div>
 

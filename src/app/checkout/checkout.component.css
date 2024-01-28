@@ -61,7 +61,7 @@
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     text-align: center;
 }
 
@@ -71,12 +71,24 @@
 
 .payment-box-container{
     display: flex;
-    padding-top: 30px;
+    padding-top: 45px;
     justify-content: center;
 }
 
 .payment-box{
     background-color: white;
-    width: 80%;
+    width: 30%;
     height: 150px;
+    border: 1px solid #e4e5e6 ;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.payment-box:hover{
+    background-color: #d9e9f3;
+    border: 1px solid #99d2f5;
+}
+
+.payment-box-content{
+    margin-top: 45px;
 }

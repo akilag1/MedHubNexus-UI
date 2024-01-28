@@ -48,15 +48,17 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
   onLoginSubmit() {
 
     this.showProgressBar = true;
+    this.logOn = true;
     this.loginData = this.authService.getToken(this.loginFormGroup.value).subscribe({
       next: (data) => {
         this.showProgressBar = false;
-        this.regOn = false;
+        this.logOn = false;
         const successMessage = "User Login Successful";
         const dialogRef = this.dialog.open(PopUpComponent, {
           width: '550px',
           data: { message: successMessage }
         }).afterClosed().subscribe(()=>{
+          this.authService.setLoginStatusClicked(true);
           this.dialogRefMain.close();
           this.loginFormGroup.reset();
           this.router.navigate(['']);
@@ -90,6 +92,7 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
           data: { message: successMessage }
         }).afterClosed().subscribe(()=>{
           // this.dialogRefMain.close();
+          console.log("inside after close");
           this.registerFormGroup.reset();
           // this.router.navigate(['']);
         })

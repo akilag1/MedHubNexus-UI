@@ -105,8 +105,20 @@
       <div class="payment-container">
         <h5>Select Payment Type</h5>
         <div class="payment-box-container">
-          <div class="payment-box"></div>
-          <div class="payment-box"></div>
+          <div class="payment-box">
+            <div class="payment-box-content">
+              <img src="../assets/icons/card-payment1.png" matTooltip="card-payment" alt="card-payment" width="25px"
+                height="25px">
+              <p>Card Payment</p>
+            </div>
+          </div>
+          <div class="payment-box" (click)="onCashOndeliveryClick()">
+            <div class="payment-box-content">
+              <img src="../assets/icons/cash-on-delivery1.png" matTooltip="cash-on-delivery" alt="cash-on-delivery"
+              width="25px" height="25px">
+              <p>Cash On Delivery</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="btn-container">

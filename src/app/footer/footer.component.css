@@ -46,6 +46,12 @@
   color: #10e7f4;
 }
 
+.info_section .info_news form button:disabled{
+  background-color: #d2d2d2;
+  border: 1px solid #d2d2d2;
+  color: #ffffff;
+}
+
 .footer_section {
   background-color: #121111;
   font-weight: 500;
@@ -63,4 +69,9 @@
 
 .footer_section a {
   color: #fbfcfd;
+}
+
+.newsletter-form-input{
+  background-color: white;
+  color: black;
 }

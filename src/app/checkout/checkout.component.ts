@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { PopUpComponent } from '../pop-up/pop-up/pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -10,7 +13,10 @@ export class CheckoutComponent implements OnInit {
 
   public shippingGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private _formBuilder: FormBuilder,
+    private dialog: MatDialog,
+    private router:Router
+    ) {
 
     this.shippingGroup = this._formBuilder.group({
       'fname': '',
@@ -31,6 +37,16 @@ export class CheckoutComponent implements OnInit {
 
   onFormSubmit(){
     console.log(this.shippingGroup.value);
+  }
+
+  onCashOndeliveryClick(){
+    const successMessage = 'Order has been successfully placed';
+    const dialogRef = this.dialog.open(PopUpComponent, {
+      width: '550px',
+      data: { message: successMessage, title: 'Success' }
+    }).afterClosed().subscribe(()=>{
+      this.router.navigate([''])
+    })
   }
 
 }
