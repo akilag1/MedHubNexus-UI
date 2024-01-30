@@ -3,7 +3,7 @@
     /* height: 100vh; */
     margin: 0;
     padding: 10px;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     height: 350px;
   }
 
@@ -30,7 +30,7 @@ mat-list-item:hover{
 
 .content {
     flex: 3;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     padding: 16px;
     /* height:400px */
   }
@@ -62,3 +62,19 @@ mat-list-item:hover{
   justify-content: flex-end;
   margin-right: 15px;
 }
+
+/* .btn-cancle {
+  margin-top: 15px;
+  padding: 5px 20px;
+  background-color: #E74C3C;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #E74C3C;
+  border-radius: 5px;
+}
+
+.btn-submit{
+  margin-top: 15px;
+  padding: 5px 20px;
+  border-radius: 5px;
+} */

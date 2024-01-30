@@ -234,9 +234,15 @@ mat-drawer-content {
 } */
 
 .cart-badge{
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   background-color: azure;
   margin-right: 10px;
   border-radius: 50%;
+  background-color: orange;
+  text-align: center;
 }
+
+/* .cart-badge p{
+  margin-left: 1px;
+} */

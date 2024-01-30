@@ -9,59 +9,99 @@
             <mat-grid-list cols="3" rowHeight="2:1">
               <mat-grid-tile>
                 <mat-form-field class="full-width">
-                  <mat-label>Drug Name</mat-label>
-                  <input formControlName="drugName" matInput placeholder="Enter your username" name="username" />
+                  <mat-label>Pharamacy Name</mat-label>
+                  <input formControlName="name" matInput placeholder="Pharamacy Name" name="name" />
                 </mat-form-field>
               </mat-grid-tile>
               <mat-grid-tile>
                 <mat-form-field class="full-width">
-                  <mat-label>Manufacturer Name</mat-label>
-                  <input formControlName="manuName" matInput type="password" placeholder="Enter your password"
-                    name="password" />
+                  <mat-label>License No</mat-label>
+                  <input formControlName="pharamacylicense" matInput placeholder="License No"
+                    name="pharamacylicense" />
                 </mat-form-field>
               </mat-grid-tile>
               <mat-grid-tile>
                 <mat-form-field class="full-width">
-                  <mat-label>Price</mat-label>
-                  <input formControlName="price" matInput type="password" placeholder="Enter your password"
-                    name="password" />
+                  <mat-label>Location</mat-label>
+                  <input formControlName="location" matInput placeholder="Location"
+                    name="location" />
                 </mat-form-field>
               </mat-grid-tile>
               <mat-grid-tile>
                 <mat-form-field class="full-width">
-                  <mat-label>Qunatity</mat-label>
-                  <input formControlName="quantity" matInput type="password" placeholder="Enter your password"
-                    name="password" />
+                  <mat-label>Contact No</mat-label>
+                  <input formControlName="contactNo" matInput placeholder="Contact No"
+                    name="contactNo" />
                 </mat-form-field>
               </mat-grid-tile>
               <mat-grid-tile>
-                <mat-form-field appearance="outline" class="from-date">
-                  <mat-label>Manufactured Date</mat-label>
-                  <input formControlName="manuDate" [matDatepicker]="frompicker"
-                    style="height: 14px; margin-top: -5px; display: block;" matInput readonly>
-                  <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
-                  <mat-datepicker #frompicker color="primary"></mat-datepicker>
+                <mat-form-field class="full-width">
+                  <mat-label>Email</mat-label>
+                  <input formControlName="email" matInput placeholder="Email"
+                    name="email" />
                 </mat-form-field>
               </mat-grid-tile>
               <mat-grid-tile>
-                <mat-form-field appearance="outline" class="start-date">
-                  <mat-label>Expire Date</mat-label>
-                  <input formControlName="expDate" [matDatepicker]="topicker"
-                    style="height: 14px; margin-top: -5px; display: block;" matInput readonly>
-                  <mat-datepicker-toggle matSuffix [for]="topicker"></mat-datepicker-toggle>
-                  <mat-datepicker #topicker color="primary"></mat-datepicker>
+                <mat-form-field class="full-width">
+                  <mat-label>Pharmacist First Name</mat-label>
+                  <input formControlName="pharamacistFName" matInput placeholder="Pharmacist First Name"
+                    name="pharamacistFName" />
                 </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="full-width">
+                  <mat-label>Pharmacist Last Name</mat-label>
+                  <input formControlName="pharamacistLName" matInput placeholder="Pharmacist Last Name"
+                    name="pharamacistLName" />
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="full-width">
+                  <mat-label>NIC</mat-label>
+                  <input formControlName="nic" matInput placeholder="NIC"
+                    name="nic" />
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-form-field class="full-width">
+                  <mat-label>Pharmacist License</mat-label>
+                  <input formControlName="pharmacistLicense" matInput placeholder="Pharmacist License"
+                    name="pharmacistLicense" />
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <!-- <mat-label>Pharamacy License Proof</mat-label> -->
+                <input type="file" (change)="onPharamacyLicenseProofsFileChange($event)" accept="image/*">
+                <!-- Display thumbnails -->
+                <div formArrayName="pharamacyLicenseProof">
+                  <div *ngFor="let pharamacyLicenseProof of pharamacyLicenseProofs.controls; let i = index">
+                    <img width="50px" height="50px" [src]="getPharamacyLicenseProofsUrl(pharamacyLicenseProof.value)" alt="pharamacyLicenseProof">
+                    <button type="button" (click)="removePharamacyLicenseProofs(i)">Remove</button>
+                  </div>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <!-- <mat-label>Pharamacist License Proof</mat-label> -->
+                <input type="file" (change)="onPharamacistLicenseProofsFileChange($event)" accept="image/*">
+                <!-- Display thumbnails -->
+                <div formArrayName="pharamacistLicenseProof">
+                  <div *ngFor="let pharamacistLicenseProof of pharamacistLicenseProofs.controls; let i = index">
+                    <img width="50px" height="50px" [src]="getPharamacistLicenseProofsUrl(pharamacistLicenseProof.value)" alt="pharamacistLicenseProof">
+                    <button type="button" (click)="removePharamacistLicenseProofs(i)">Remove</button>
+                  </div>
+                </div>
               </mat-grid-tile>
             </mat-grid-list>
             <div class="btn-container">
-              <button mat-raised-button color="primary" class="login-button" [disabled]="createListingGroup.invalid">
+              <button mat-raised-button color="primary" class="btn-submit" [disabled]="createListingGroup.invalid">
                 SUBMIT
               </button>
+              <!-- <div class="footer-button-container">
+                <button type="button" class="btn-cancle" (click)="closeDialog()">CANCEL</button>
+              </div> -->
             </div>
           </form>
         </mat-card-content>
       </mat-card>
     </div>
-  
-    <div style="border-left:1px solid rgba(0,0,0,.1);height:400px"></div>
   </div>
