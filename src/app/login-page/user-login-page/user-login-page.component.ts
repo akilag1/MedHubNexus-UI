@@ -58,10 +58,16 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
           width: '550px',
           data: { message: successMessage }
         }).afterClosed().subscribe(()=>{
+          this.authService.setToken(data.token);
           this.authService.setLoginStatusClicked(true);
           this.dialogRefMain.close();
           this.loginFormGroup.reset();
-          this.router.navigate(['']);
+
+          if(data.userType=='pharmacy'){
+            this.router.navigate(['pharmacy-dashboard']);
+          }else{
+            this.router.navigate(['']);
+          }
         })
         console.log(data);
       },

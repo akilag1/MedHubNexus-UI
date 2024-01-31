@@ -27,6 +27,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     console.log("Header started")
 
+    if(this.authService.isLoggedIn()){
+      this.loginStatus = true;
+    }
+
     this.loginStatusSubscription = this.authService.getLoginStatusClicked().subscribe((status)=>{
       this.loginStatus = status;
     })
@@ -52,6 +56,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSignoutClick(){
+    this.authService.removeToken();
     this.authService.setLoginStatusClicked(false);
   }
 

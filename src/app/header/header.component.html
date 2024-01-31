@@ -81,7 +81,7 @@
           <div class="profile-dropdown" *ngIf="loginStatus">
                 <img width="40" height="40" src="/assets/images/user3.jpg" [matMenuTriggerFor]="profile_menu">
                 <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
-                  <p style="padding-left: 16px;">Hi Akila</p>
+                  <p style="padding-left: 16px;">Hi User</p>
                   <button mat-menu-item routerLink="customer-dashboard">Profile</button>
                   <button mat-menu-item routerLink="customer-dashboard/orders">Orders</button>
                   <button mat-menu-item (click)="onSignoutClick()">Sign Out</button>

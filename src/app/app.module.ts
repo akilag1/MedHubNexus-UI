@@ -11,7 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminLoginPageComponent } from './login-page/admin-login-page/admin-login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -69,6 +69,7 @@ import { PharmacyDashHomeVerifyComponent } from './dashboards/pharmacy-dashboard
 import { CartSidenavComponent } from './cart/cart-sidenav/cart-sidenav.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart/cart.component';
+import { AuthInterceptor } from './Interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -144,7 +145,13 @@ import { CartComponent } from './cart/cart/cart.component';
     ReactiveFormsModule,
     DragDropModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
