@@ -10,18 +10,18 @@ import { PopUpComponent } from 'src/app/pop-up/pop-up/pop-up.component';
 })
 export class AdminDashPharmaciesComponent implements OnInit {
 
-  public pharmacists:any = []
+  public pharmacies:any = []
   public showProgressbar: boolean = false;
   public totalCount: number = 1;
 
   constructor(public dialog: MatDialog) {
 
-    this.pharmacists = [{'pharmacistId':1,'userName':'jane123','email':'test@gmail.com','status':'Active'},
-                        {'pharmacistId':2,'userName':'jane124','email':'test@gmail.com','status':'Active'},
-                        {'pharmacistId':3,'userName':'jane125','email':'test@gmail.com','status':'Suspended'},
-                        {'pharmacistId':4,'userName':'jane126','email':'test@gmail.com','status':'Suspended'},
-                        {'pharmacistId':5,'userName':'jane127','email':'test@gmail.com','status':'Active'},
-                        {'pharmacistId':6,'userName':'jane128','email':'test@gmail.com','status':'Active'}]
+    this.pharmacies = [{'pharmacyId':1,'userName':'jane123','email':'test@gmail.com','status':'Active'},
+                        {'pharmacyId':2,'userName':'jane124','email':'test@gmail.com','status':'Active'},
+                        {'pharmacyId':3,'userName':'jane125','email':'test@gmail.com','status':'Suspended'},
+                        {'pharmacyId':4,'userName':'jane126','email':'test@gmail.com','status':'Suspended'},
+                        {'pharmacyId':5,'userName':'jane127','email':'test@gmail.com','status':'Active'},
+                        {'pharmacyId':6,'userName':'jane128','email':'test@gmail.com','status':'Active'}]
 
    }
 
@@ -48,7 +48,7 @@ export class AdminDashPharmaciesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result)=>{
       if(result){
-        this.pharmacists.splice(id,1);
+        this.pharmacies.splice(id,1);
         const successMessage = 'Pharmacist has been deleted';
           const dialogRef = this.dialog.open(PopUpComponent, {
             width: '550px',
@@ -58,6 +58,14 @@ export class AdminDashPharmaciesComponent implements OnInit {
         console.log("canceled");
       }
     })
+  }
+
+  onSuspend(id:number){
+    this.pharmacies[id]['status'] = "Suspended";
+  }
+
+  onActive(id:number){
+    this.pharmacies[id]['status'] = "Active";
   }
 
 }

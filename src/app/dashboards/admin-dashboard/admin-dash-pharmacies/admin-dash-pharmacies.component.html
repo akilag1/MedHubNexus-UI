@@ -2,7 +2,7 @@
     <table class="main-table">
         <thead>
             <tr>
-                <th>PHARMACIST ID</th>
+                <th>PHARMACY ID</th>
                 <th>USERNAME</th>
                 <th>EMAIL</th>
                 <th>STATUS</th>
@@ -10,15 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let pharmacy of pharmacists;index as i">
-                <td>{{pharmacy['pharmacistId']}}</td>
+            <tr *ngFor="let pharmacy of pharmacies;index as i">
+                <td>{{pharmacy['pharmacyId']}}</td>
                 <td>{{pharmacy['userName']}}</td>
                 <th>{{pharmacy['email']}}</th>
                 <td>{{pharmacy['status']}}</td>
                 <td>
                     <img src="../../assets/icons/more-info2.png" matTooltip="more-info" alt="more-info" width="25px"
                         height="25px">
-                    <img src="../../assets/icons/suspend2.png" matTooltip="suspend" alt="suspend" width="25px"
+                    <img src="../../assets/icons/check2.png" *ngIf="pharmacy['status']=='Suspended'" matTooltip="active" (click)="onActive(i)" alt="suspend" width="25px" height="25px">
+                    <img src="../../assets/icons/suspend2.png" *ngIf="pharmacy['status']=='Active'" matTooltip="suspend" alt="suspend" (click)="onSuspend(i)" width="25px"
                         height="25px">
                     <img src="../../assets/icons/cross1.png" matTooltip="remove" (click)="onRemove(i)" alt="delete"
                         width="25px" height="25px">
