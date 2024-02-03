@@ -65,9 +65,10 @@ export class UserLoginPageComponent implements OnInit, OnDestroy {
 
           if(data.userType=='pharmacy'){
             this.router.navigate(['pharmacy-dashboard']);
-          }else{
-            this.router.navigate(['']);
           }
+          // else{
+          //   this.router.navigate(['']);
+          // }
         })
         console.log(data);
       },

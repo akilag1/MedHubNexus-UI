@@ -38,6 +38,7 @@ export class AdminLoginPageComponent implements OnInit {
 
     this.showProgressBar = true;
     this.logOn = true
+    // this.authService.logout();
     this.loginData = this.authService.getToken(this.adminLoginGroup.value).subscribe({
       next: (data) => {
         this.showProgressBar = false;

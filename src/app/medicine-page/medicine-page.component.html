@@ -30,8 +30,8 @@
     <h2 class="text-uppercase">
       MEDICINES</h2>
     <div class="grid-container">
-      <div class="grid-row" *ngFor="let row of rows">
-        <app-medicine-thumbnail *ngFor="let item of row"></app-medicine-thumbnail>
+      <div class="grid-row" *ngFor="let row of rows; index as i">
+        <app-medicine-thumbnail *ngFor="let item of row; index as j" [data]="this.listings[i+j]"></app-medicine-thumbnail>
       </div>
     </div>
     <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>

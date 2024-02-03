@@ -13,18 +13,18 @@
         </div> -->
       <div class="text">
         <h6>
-          <a routerLink="/medicine/1">{{medicineName}}</a>
+          <a routerLink="/medicine/1">{{data['medicineName']}}</a>
         </h6>
         <h6 class="price">
           <span>
             LKR
           </span>
-          30
+          {{data['price']}}
         </h6>
       </div>
     </div>
     <div class="btn_container">
-      <button id="btn_add_to_cart" class="btn btn-primary" type="button">
+      <button id="btn_add_to_cart" class="btn btn-primary" type="button" (click)="onAddToCart()">
         Add to Cart
       </button>
       <button class="btn btn-primary" type="button" (click)="onBuy()">

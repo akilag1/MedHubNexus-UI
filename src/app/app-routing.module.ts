@@ -23,6 +23,7 @@ import { MedicineDetailComponent } from './medicine-detail/medicine-detail.compo
 import { PharmacyDetailComponent } from './pharmacy-detail/pharmacy-detail.component';
 import { CartComponent } from './cart/cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AuthGuard } from './configs/auth.guard';
 
 const routes: Routes = [
 
@@ -38,7 +39,7 @@ const routes: Routes = [
       { path: 'orders', component: PharmacyDashOrdersComponent },
       { path: 'listings', component: PharmacyDashListingsComponent },
       { path: '**', component: PharmacyDashHomeComponent }
-    ]
+    ],canActivate: [AuthGuard]
   },
   {
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
@@ -47,21 +48,21 @@ const routes: Routes = [
       { path: 'pharmacies', component: AdminDashPharmaciesComponent },
       { path: 'requests', component: AdminDashRequestsComponent },
       { path: '**', component: AdminDashHomeComponent },
-    ]
+    ],canActivate: [AuthGuard]
   },
   {
     path: 'customer-dashboard', component: CustomerDashboardComponent, children: [
       { path: '', component: CustomerDashHomeComponent },
       { path: 'orders', component: CustomerDashOrdersComponent },
       { path: '**', component: CustomerDashHomeComponent }
-    ]
+    ],canActivate: [AuthGuard]
   },
   {path: 'medicine/:id', component: MedicineDetailComponent},
   {path: 'pharmacy/:id', component: PharmacyDetailComponent, children:[
     // { path: '', component: MedicinePageComponent },
   ]},
-  {path: 'cart', component:CartComponent},
-  {path: 'checkout', component:CheckoutComponent},
+  {path: 'cart', component:CartComponent,canActivate: [AuthGuard]},
+  {path: 'checkout', component:CheckoutComponent,canActivate: [AuthGuard]},
   { path: '**', component: HomePageComponent }
 
 ];

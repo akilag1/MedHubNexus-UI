@@ -23,6 +23,7 @@ export class AuthGuard implements CanActivate {
         width: '550px',
         data: { message: message, title: 'Warning' }
       })
+      this.router.navigate([''])
       return false;
     }
   }

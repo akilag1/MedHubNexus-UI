@@ -51,7 +51,7 @@
               <a class="nav-link" routerLink="/contact">Contact us</a>
             </li>
           </ul>
-          <div class="prescription-btn">
+          <div class="prescription-btn" *ngIf="loginStatus">
             <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
           </div>
           <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()" *ngIf="!loginStatus">
@@ -71,7 +71,7 @@
 
           <div class="cart" (click)="onCartClick()" *ngIf="loginStatus">
             <img src="/assets/icons/cart1.png" width="40px" height="40px" alt="cart">
-            <div class="cart-badge"><p>20</p></div>
+            <div class="cart-badge" *ngIf="false"><p></p></div>
             <div class="cart-text">
               <p>CART Items</p>
               <p>LKR 2000</p>
@@ -82,8 +82,8 @@
                 <img width="40" height="40" src="/assets/images/user3.jpg" [matMenuTriggerFor]="profile_menu">
                 <mat-menu #profile_menu="matMenu" xPosition="after" class="profile_menu">
                   <p style="padding-left: 16px;">Hi User</p>
-                  <button mat-menu-item routerLink="customer-dashboard">Profile</button>
-                  <button mat-menu-item routerLink="customer-dashboard/orders">Orders</button>
+                  <button mat-menu-item routerLink="customer-dashboard" routerLink="/customer-dashboard">Profile</button>
+                  <button mat-menu-item routerLink="customer-dashboard/orders" routerLink="/customer-dashboard/orders">Orders</button>
                   <button mat-menu-item (click)="onSignoutClick()">Sign Out</button>
                 </mat-menu>
               </div>
