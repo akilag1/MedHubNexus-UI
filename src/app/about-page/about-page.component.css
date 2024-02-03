@@ -38,3 +38,10 @@
   background-color: transparent;
   color: #2c2c2c;
 }
+
+.flex-container {
+  line-height: 40px;
+  justify-content: center;
+  font-weight: 400;
+  font-size: large;
+}
