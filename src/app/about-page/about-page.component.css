@@ -41,7 +41,14 @@
 
 .flex-container {
   line-height: 40px;
-  justify-content: center;
+  text-align: justify;
+  text-justify: inter-word;
   font-weight: 400;
   font-size: large;
+}
+
+.bottomright {
+  position: absolute;
+  right: 16px;
+  font-size: 18px;
 }
