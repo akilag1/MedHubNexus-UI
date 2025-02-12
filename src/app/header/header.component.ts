@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserLoginPageComponent } from '../login-page/user-login-page/user-login-page.component';
 import { CommonService } from '../services/common-service';
 import { PrescriptionComponent } from '../prescription/prescription.component';
+import {LoginService} from "../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -14,7 +16,9 @@ export class HeaderComponent implements OnInit {
   public isAdmin:boolean = false;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public router: Router,
+    public loginService: LoginService
     ) { }
 
   ngOnInit(): void {
@@ -23,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   onLogBtnPressed(){
     const dialogRef = this.dialog.open(UserLoginPageComponent, {
-      height: '480px',
+      height: '600px',
       width: '650px',
       panelClass: 'log-reg-container'
     });
@@ -35,4 +39,13 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  onLogOut() {
+    this.loginService.logOut();
+    this.router.navigate(['']);
+  }
+
+  onProfile() {
+    this.router.navigate([this.loginService.userRole == 'ADMIN' ? 'admin-dashboard' :
+      this.loginService.userRole == 'CUSTOMER' ? 'customer-dashboard' : 'pharmacy-dashboard']);
+  }
 }

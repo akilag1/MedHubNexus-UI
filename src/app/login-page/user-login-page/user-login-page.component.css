@@ -4,7 +4,7 @@
     margin: 0;
     padding: 10px;
     background-color: #f0f0f0;
-    height: 325px;
+    height: 455px;
   }
 
 .user_details{
@@ -19,7 +19,7 @@
 mat-list-item:hover{
   background-color: rgb(228, 207, 89);
   border-radius: 10px;
-}  
+}
 
 .menu {
     flex: 1;
@@ -55,4 +55,8 @@ mat-list-item:hover{
 
 .spinner span{
   margin-left: 5px;
+}
+.register-card {
+  height: 375px;
+  overflow: scroll;
 }

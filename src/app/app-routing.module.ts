@@ -19,6 +19,7 @@ import { AdminDashRequestsComponent } from './dashboards/admin-dashboard/admin-d
 import { CustomerDashboardComponent } from './dashboards/customer-dashboard/customer-dashboard.component';
 import { CustomerDashHomeComponent } from './dashboards/customer-dashboard/customer-dash-home/customer-dash-home.component';
 import { CustomerDashOrdersComponent } from './dashboards/customer-dashboard/customer-dash-orders/customer-dash-orders.component';
+import {RouteGuardService} from "./services/route-guard.service";
 
 const routes: Routes = [
 
@@ -34,7 +35,7 @@ const routes: Routes = [
       { path: 'orders', component: PharmacyDashOrdersComponent },
       { path: 'listings', component: PharmacyDashListingsComponent },
       { path: '**', component: PharmacyDashHomeComponent }
-    ]
+    ], canActivate: [RouteGuardService]
   },
   {
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
@@ -43,14 +44,14 @@ const routes: Routes = [
       { path: 'pharmacists', component: AdminDashPharmaciesComponent },
       { path: 'requests', component: AdminDashRequestsComponent },
       { path: '**', component: AdminDashHomeComponent },
-    ]
+    ], canActivate: [RouteGuardService]
   },
   {
     path: 'customer-dashboard', component: CustomerDashboardComponent, children: [
       { path: '', component: CustomerDashHomeComponent },
       { path: 'orders', component: CustomerDashOrdersComponent },
       { path: '**', component: CustomerDashHomeComponent }
-    ]
+    ], canActivate: [RouteGuardService]
   },
   { path: '**', component: HomePageComponent }
 

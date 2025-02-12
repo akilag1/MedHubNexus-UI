@@ -3,7 +3,7 @@
         <div class="top_contact-container">
           <div class="tel_container">
             <a href="#">
-              <img src="/assets/images/telephone-symbol-button.png" alt=""> Call : +94 111234567 
+              <img src="/assets/images/telephone-symbol-button.png" alt=""> Call : +94 111234567
             </a>
           </div>
           <div class="social-container">
@@ -54,12 +54,18 @@
               <div class="prescription-btn">
                 <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
               </div>
-              <div class="login_btn-contanier ml-0 ml-lg-5" (click)="onLogBtnPressed()">
-                <a >
+
+              <a *ngIf="loginService.userProfile" class="profile-icon" (click)="onProfile()">
+                <img style="width: 100%;" src="assets/images/profile.png">
+              </a>
+              <div class="login_btn-contanier ml-0 ml-lg-5">
+                <a *ngIf="!loginService.userProfile" (click)="onLogBtnPressed()">
                   <img src="/assets/images/user.png" alt="">
-                  <span>
-                    Login/Register
-                  </span>
+                  <span>Login/Register</span>
+                </a>
+                <a *ngIf="loginService.userProfile" (click)="onLogOut()">
+                  <img src="assets/icons/logout-64.png" width="25px">
+                  <span>Logout</span>
                 </a>
               </div>
               <!-- <div>
