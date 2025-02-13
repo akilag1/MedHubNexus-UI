@@ -32,8 +32,8 @@ const routes: Routes = [
   {
     path: 'pharmacy-dashboard', component: PharmacyDashboardComponent, children: [
       { path: '', component: PharmacyDashHomeComponent },
-      { path: 'orders', component: PharmacyDashOrdersComponent },
-      { path: 'listings', component: PharmacyDashListingsComponent },
+      { path: 'brands', component: PharmacyDashOrdersComponent },
+      { path: 'categories', component: PharmacyDashListingsComponent },
       { path: '**', component: PharmacyDashHomeComponent }
     ], canActivate: [RouteGuardService]
   },

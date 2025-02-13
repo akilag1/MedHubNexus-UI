@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserLoginPageComponent } from '../login-page/user-login-page/user-login-page.component';
-import { CommonService } from '../services/common-service';
 import { PrescriptionComponent } from '../prescription/prescription.component';
 import {LoginService} from "../services/login.service";
 import {Router} from "@angular/router";
@@ -14,6 +13,8 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
 
   public isAdmin:boolean = false;
+  isCustomerUser = false;
+  isPharmacyUser = false;
 
   constructor(
     public dialog: MatDialog,
@@ -22,7 +23,15 @@ export class HeaderComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log("Header started")
+    if(this.loginService.userRole == 'CUSTOMER'){
+      this.isCustomerUser = true;
+    }
+    else if(this.loginService.userRole == 'ADMIN'){
+      this.isAdmin = true;
+    }
+    else{
+      this.isPharmacyUser = true;
+    }
   }
 
   onLogBtnPressed(){
@@ -47,5 +56,17 @@ export class HeaderComponent implements OnInit {
   onProfile() {
     this.router.navigate([this.loginService.userRole == 'ADMIN' ? 'admin-dashboard' :
       this.loginService.userRole == 'CUSTOMER' ? 'customer-dashboard' : 'pharmacy-dashboard']);
+  }
+
+  viewHome(){
+    if(this.isAdmin){
+      this.router.navigate(['admin-dashboard']);
+    }
+    else if(this.isCustomerUser){
+      this.router.navigate(['customer-dashboard']);
+    }
+    else{
+      this.router.navigate(['pharmacy-dashboard']);
+    }
   }
 }

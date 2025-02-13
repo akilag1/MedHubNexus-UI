@@ -1,29 +1,56 @@
 <div>
-    <table class="main-table">
-        <thead>
-            <tr>
-                <th>USER ID</th>
-                <th>USERNAME</th>
-                <th>EMAIL</th>
-                <th>STATUS</th>
-                <th>ACTIONS</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let customer of customers; index as i">
-                <td>{{customer['userId']}}</td>
-                <td>{{customer['userName']}}</td>
-                <td>{{customer['email']}}</td>
-                <td>{{customer['status']}}</td>
-                <td>
-                    <img src="../../assets/icons/check2.png" *ngIf="customer['status']=='Suspended'" matTooltip="active" (click)="onActive(i)" alt="suspend" width="25px" height="25px">
-                    <img src="../../assets/icons/suspend2.png" *ngIf="customer['status']=='Active'" matTooltip="suspend" (click)="onSuspend(i)" alt="suspend" width="25px" height="25px">
-                    <img src="../../assets/icons/cross1.png" matTooltip="remove" (click)="onRemove(i)" alt="delete" width="25px" height="25px">
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
-    <mat-paginator [length]="totalCount" [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons
-        (page)="onPageChange($event)"></mat-paginator>
+  <table class="main-table">
+    <thead>
+      <tr>
+        <th>USER ID</th>
+        <th>USERNAME</th>
+        <th>EMAIL</th>
+        <th>REGISTERED ON</th>
+        <th>ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers; index as i">
+        <td>{{ customer["userId"] }}</td>
+        <td>{{ customer["username"] }}</td>
+        <td>{{ customer["email"] }}</td>
+        <td>{{ customer["registeredOn"] }}</td>
+        <td>
+          <img
+            src="../../assets/icons/check2.png"
+            *ngIf="customer['status'] == 'Suspended'"
+            matTooltip="active"
+            (click)="onActive(i)"
+            alt="suspend"
+            width="25px"
+            height="25px"
+          />
+          <img
+            src="../../assets/icons/suspend2.png"
+            *ngIf="customer['status'] == 'Active'"
+            matTooltip="suspend"
+            (click)="onSuspend(i)"
+            alt="suspend"
+            width="25px"
+            height="25px"
+          />
+          <img
+            src="../../assets/icons/cross1.png"
+            matTooltip="remove"
+            (click)="onRemove(i)"
+            alt="delete"
+            width="25px"
+            height="25px"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="totalCount == 0" class="noDataMsg">No Data Available</div>
+  <mat-paginator
+    [length]="totalCount"
+    [pageSizeOptions]="[5, 10, 25, 50, 100]"
+    showFirstLastButtons
+    (page)="onPageChange($event)"
+  ></mat-paginator>
 </div>

@@ -1,12 +1,27 @@
-<div *ngIf="!verified" class="verify-warning">
-    <img src="../../assets/icons/caution1.png">
-    <h3>PLEASE VERIFY YOUR ACCOUNT</h3>
-    <p class="verify-link" (click)="onVerify()">Click to Verify</p>
-</div>
-<mat-grid-list cols="3" rowHeight="2:1" *ngIf="verified">
-    <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle1"></app-dash-home-box></mat-grid-tile>
-    <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle2"></app-dash-home-box></mat-grid-tile>
-    <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle3"></app-dash-home-box></mat-grid-tile>
-    <mat-grid-tile><app-dash-home-box [boxTitle]="boxTitle4"></app-dash-home-box></mat-grid-tile>
-</mat-grid-list>
+<div class="carousel-item active">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="img-box">
+            <img src="/assets/images/medicine.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="detail-box">
+            <h1>
+              Welcome To <br>
+              <span>
+                MedHubNexus
+              </span>
+
+            </h1>
+            <p>
+              Discover a new era in pharmacy management and medication access with MedHubNexus! Say goodbye to delays and hello to efficiency.
+              Find medicines in seconds, enjoy rapid prescription processing, and secure online purchases.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   

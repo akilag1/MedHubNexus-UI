@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth-service';
 
 @Component({
   selector: 'app-admin-dash-home',
@@ -7,15 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashHomeComponent implements OnInit {
 
-  public boxTitle1 = "REQUESTS"
-  public boxTitle2 = "INBOX"
-  public boxTitle3 = "PHARMACIES"
-  public boxTitle4 = "CUSTOMERS"
-  public boxTitle5 = "LISTINGS"
+  public boxTitle1 = "PHARMACIES"
+  public boxTitle2 = "CUSTOMERS"
+  public boxValue1!: number;
+  public boxValue2!: number;
+  userlist!: any[];
+  customerlist!: any[];
+  pharmacylist!: any[];
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers(){
+    this.authService.getAllUsers().subscribe((data) => {
+      this.userlist = data.data;
+      this.customerlist = this.userlist.filter(u => u.userRole == 'CUSTOMER');
+      this.pharmacylist = this.userlist.filter(u => u.userRole == 'PHARMACY')
+
+      this.boxValue1 = this.pharmacylist.length;
+      this.boxValue2 = this.customerlist.length;
+    })
   }
 
 }

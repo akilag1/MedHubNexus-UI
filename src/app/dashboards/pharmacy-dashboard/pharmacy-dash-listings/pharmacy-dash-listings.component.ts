@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PharmacyDashListingsAddComponent } from './pharmacy-dash-listings-add/pharmacy-dash-listings-add.component';
-import { ConfirmationDialogComponent } from 'src/app/pop-up/confirmation-dialog/confirmation-dialog.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CategoryService } from 'src/app/services/category.service';
+import { Category } from 'src/app/models/category';
+import { ResponseDto } from 'src/app/models/response-dto';
+import { PopUpComponent } from 'src/app/pop-up/pop-up/pop-up.component';
 
 @Component({
   selector: 'app-pharmacy-dash-listings',
@@ -10,29 +14,32 @@ import { ConfirmationDialogComponent } from 'src/app/pop-up/confirmation-dialog/
 })
 export class PharmacyDashListingsComponent implements OnInit {
 
-  public listings: any = [];
+  public categories: any = [];
   public showProgressbar: boolean = false;
   public totalCount: number = 1;
   public approved:boolean = false;
+  public categoryFormGroup!: FormGroup;
+    addCategoryFormVisible = false;
 
-  constructor(public dialog: MatDialog) { 
-
-    this.listings = [{'medicineId':111,'medicineName':'asprin','price':100,'quantity':10,'status':'Active'},
-    {'medicineId':112,'medicineName':'asprinx','price':200,'quantity':20,'status':'Active'},
-    {'medicineId':113,'medicineName':'aspriny','price':300,'quantity':30,'status':'Active'},
-    {'medicineId':114,'medicineName':'asprinz','price':400,'quantity':40,'status':'Active'},
-    {'medicineId':115,'medicineName':'asprina','price':150,'quantity':50,'status':'Out Of Stock'},
-    {'medicineId':116,'medicineName':'asprine','price':160,'quantity':60,'status':'Out Of Stock'},
-    {'medicineId':117,'medicineName':'asprinr','price':190,'quantity':70,'status':'Active'}]
-
-  }
+  constructor(
+      private _formBuilder: FormBuilder,
+      private categoryService: CategoryService,
+      private dialog: MatDialog
+    ) {
+      this.categoryFormGroup = this._formBuilder.group({
+        code: ['', Validators.required],
+        name: ['', Validators.required],
+        description: [''],
+      });
+    }
 
   ngOnInit(): void {
+    this.getAllCategories();
   }
 
   onPageChange(event: any) {
 
-    this.listings = [];
+    this.categories = [];
     // this.showProgressbar =true;
     const pageIndex = event.pageIndex;
     const pageSize = event.pageSize;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -50,7 +57,50 @@ export class PharmacyDashListingsComponent implements OnInit {
   }
 
   onRemove(index:number){
-    this.listings.splice(index,1);
+    this.categories.splice(index,1);
   }
+
+  getAllCategories() {
+      this.categoryService.getAllCategories().subscribe((data) => {
+        this.categories = data.data;
+      });
+    }
+  
+    openAddCategory() {
+      this.addCategoryFormVisible = true;
+    }
+  
+    closeAddCategory() {
+      this.addCategoryFormVisible = false;
+      this.categoryFormGroup.reset();
+    }
+  
+    addCategory() {
+      const category = new Category();
+      category.code = this.categoryFormGroup.value.code;
+      category.name = this.categoryFormGroup.value.name;
+      category.description = this.categoryFormGroup.value.description
+        ? this.categoryFormGroup.value.description
+        : '';
+  
+      this.categoryService.createCategory(category).subscribe((res: ResponseDto) => {
+        if (res.status === 1 && res.data) {
+          const category: Category = res.data;
+          this.categories.push(res.data);
+          this.closeAddCategory();
+          this.dialog.open(PopUpComponent, {
+            width: '550px',
+            data: { message: res.message, title: 'Success' },
+          });
+        } else {
+          console.log(res.message);
+          this.closeAddCategory();
+          this.dialog.open(PopUpComponent, {
+            width: '550px',
+            data: { message: res.message, title: 'Error' },
+          });
+        }
+      });
+    }
 
 }

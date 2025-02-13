@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerDashboardComponent implements OnInit {
 
-  public customerName:string = "Amila"
+  public customerName:string = "Oshadhi"
   public pageTitle:string = "HOME";
 
   constructor() { }

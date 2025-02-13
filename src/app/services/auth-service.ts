@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
+import { ResponseDto } from '../models/response-dto';
 
 export interface AuthResponseData {
-  id: number,
+  id: number;
   login: string;
   token: string;
   email: string;
@@ -14,11 +15,10 @@ export interface AuthResponseData {
   providedIn: 'root',
 })
 export class AuthService {
-
   private readonly TOKEN_KEY = 'token';
   // private apiUrl = 'http://your-backend-api-url';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   get token(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
@@ -36,26 +36,38 @@ export class AuthService {
     return !!this.token;
   }
 
-  getToken(formData:any):Observable<AuthResponseData> {
-
+  getToken(formData: any): Observable<AuthResponseData> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-  
-    return this.http.post<AuthResponseData>(`http://localhost:8080/medhubnexus/auth/login`, formData, {headers})
 
+    return this.http.post<AuthResponseData>(
+      `http://localhost:8080/medhubnexus/auth/login`,
+      formData,
+      { headers }
+    );
   }
 
-  registerUser(formData:any):Observable<AuthResponseData>{
-
+  registerUser(formData: any): Observable<AuthResponseData> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-  
-    return this.http.post<AuthResponseData>(`http://localhost:8080/medhubnexus/auth/register`, formData, {headers})
 
-
+    return this.http.post<AuthResponseData>(
+      `http://localhost:8080/medhubnexus/auth/register`,
+      formData,
+      { headers }
+    );
   }
 
+  getAllUsers(): Observable<ResponseDto> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
 
+    return this.http.get<ResponseDto>(
+      `http://localhost:8080/medhubnexus/auth/v1/getall`,
+      { headers }
+    );
+  }
 }

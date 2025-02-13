@@ -6,14 +6,13 @@
       <div class="user_details">
         <img width="150" height="150" src="../../assets/images/pharmacy1.jpg" alt="Pharmacy_picture">
         <h3>Hello</h3>
-        <h3>{{pharmacyName}}!</h3>
-        <a routerLink="#">Edit Profile</a>
+        <h3>{{pharmacyInfo.name}}!</h3>
       </div>
       <hr>
       <mat-list>
         <mat-list-item routerLink="/pharmacy-dashboard" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='HOME'}">HOME</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/orders" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='ORDERS'}" [disabled]="false">ORDERS</mat-list-item>
-        <mat-list-item routerLink="/pharmacy-dashboard/listings" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='LISTINGS'}" [disabled]="false">LISTINGS</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard/brands" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='ORDERS'}" [disabled]="false">BRANDS</mat-list-item>
+        <mat-list-item routerLink="/pharmacy-dashboard/categories" (click)="onClickList($event.target)" [ngClass]="{'mat-list-select':pageTitle=='LISTINGS'}" [disabled]="false">CATEGORIES</mat-list-item>
       </mat-list>
     </div>
 

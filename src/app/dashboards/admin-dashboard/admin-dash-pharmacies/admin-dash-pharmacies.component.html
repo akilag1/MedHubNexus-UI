@@ -5,16 +5,16 @@
                 <th>PHARMACIST ID</th>
                 <th>USERNAME</th>
                 <th>EMAIL</th>
-                <th>STATUS</th>
+                <th>REGISTERED ON</th>
                 <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let pharmacy of pharmacists;index as i">
-                <td>{{pharmacy['pharmacistId']}}</td>
-                <td>{{pharmacy['userName']}}</td>
+                <td>{{pharmacy['userId']}}</td>
+                <td>{{pharmacy['username']}}</td>
                 <th>{{pharmacy['email']}}</th>
-                <td>{{pharmacy['status']}}</td>
+                <td>{{pharmacy['registeredOn']}}</td>
                 <td>
                     <img src="../../assets/icons/more-info2.png" matTooltip="more-info" alt="more-info" width="25px"
                         height="25px">
