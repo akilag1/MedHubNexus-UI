@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PharmacyInfo } from 'src/app/models/pharmacy-info';
 import { UserView } from 'src/app/models/user-view';
 import { LoginService } from 'src/app/services/login.service';
-import { PharmacyInfoService } from 'src/app/services/pharmacy-info.service';
 
 @Component({
   selector: 'app-pharmacy-dashboard',
@@ -16,7 +15,7 @@ export class PharmacyDashboardComponent implements OnInit {
   _userProfile!: UserView;
   pharmacyInfo!: PharmacyInfo;
 
-  constructor(private loginService: LoginService, private pharmacyInfoService: PharmacyInfoService) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
     const currentPath = window.location.pathname;
