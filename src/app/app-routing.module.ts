@@ -43,6 +43,9 @@ const routes: Routes = [
       { path: 'customers', component: AdminDashCustomersComponent },
       { path: 'pharmacists', component: AdminDashPharmaciesComponent },
       { path: 'requests', component: AdminDashRequestsComponent },
+      { path: 'brands', component: PharmacyDashOrdersComponent },
+      { path: 'categories', component: PharmacyDashListingsComponent },
+      { path: 'pharmacies', component: PharmacyPageComponent },
       { path: '**', component: AdminDashHomeComponent },
     ], canActivate: [RouteGuardService]
   },

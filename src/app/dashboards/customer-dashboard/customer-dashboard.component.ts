@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerDashboardComponent implements OnInit {
 
-  public customerName:string = "Oshadhi"
+  public customerName!:string
   public pageTitle:string = "HOME";
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-
+    this.customerName = this.loginService.userProfile.customerInfo.fullName;
     const currentPath = window.location.pathname;
     const pathParts = currentPath.split('/');
     const lastPart = pathParts.pop();

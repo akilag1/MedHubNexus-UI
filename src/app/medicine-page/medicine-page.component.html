@@ -1,18 +1,161 @@
 <app-header></app-header>
-<app-search [searchTypes]="searchTypes"></app-search>
-<app-filter></app-filter>
-<section class="health_section layout_padding">
-  <div class="health_carousel-container">
-    <h2 class="text-uppercase">
-      MEDICINES</h2>
-    <div class="grid-container">
-      <div class="grid-row" *ngFor="let row of rows">
-        <app-medicine-thumbnail *ngFor="let item of row"></app-medicine-thumbnail>
+
+<app-search *ngIf="isCustomerUser" [searchTypes]="searchTypes"></app-search>
+<h2 class="text-uppercase">MEDICINES</h2>
+<button
+  *ngIf="isPharmacyUser"
+  mat-raised-button
+  color="primary"
+  class="addBtn"
+  (click)="openAddMedicine()"
+>
+  ADD MEDICINE
+</button>
+<table class="main-table">
+  <thead>
+    <tr>
+      <th>CODE</th>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>UNIT PRICE</th>
+      <th>AVAILABLE QUANTITY</th>
+      <th *ngIf="isPharmacyUser">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medicine of medicines">
+      <td>{{ medicine["code"] }}</td>
+      <td>{{ medicine["name"] }}</td>
+      <td>{{ medicine["description"] }}</td>
+      <td>{{ medicine["unitPrice"] }}</td>
+      <td>{{ medicine["availableQty"] }}</td>
+      <td *ngIf="isPharmacyUser">
+        <a (click)="delete(medicine.id)">
+        <img
+          src="../../assets/icons/cross1.png"
+          matTooltip="cancel"
+          alt="more-info"
+          width="25px"
+          height="25px"
+        /></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="totalCount == 0" class="noDataMsg">No Data Available</div>
+<mat-paginator
+  [length]="totalCount"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]"
+  showFirstLastButtons
+  (page)="onPageChange($event)"
+></mat-paginator>
+
+<mat-card class="login-card" *ngIf="addMedicineFormVisible">
+  <mat-card-header>
+    <mat-card-title>Add Medicine</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="medicineFormGroup" (ngSubmit)="addMedicine()">
+      <div row>
+        <mat-form-field class="full-width">
+          <mat-label>Code</mat-label>
+          <input
+            formControlName="code"
+            matInput
+            placeholder="Enter medicine code"
+            name="code"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input
+            formControlName="name"
+            matInput
+            placeholder="Enter medicine name"
+            name="name"
+            required
+          />
+        </mat-form-field>
       </div>
-    </div>
-    <div *ngIf="totalCount==0" class="noDataMsg">No Data Available</div>
-    <mat-paginator [length]="totalCount" [pageSizeOptions]="[8,16,32]" showFirstLastButtons
-      (page)="onPageChange($event)"></mat-paginator>
-  </div>
-</section>
+      <div row>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <input
+            formControlName="description"
+            matInput
+            placeholder="Enter medicine description"
+            name="description"
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Brand</mat-label>
+          <mat-select
+            formControlName="brand"
+            matInput
+            placeholder="Select medicine brand"
+            name="brand"
+            required
+          >
+            <mat-option *ngFor="let brand of brands" [value]="brand.id">{{
+              brand.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-form-field class="full-width">
+        <mat-label>Category</mat-label>
+        <mat-select
+          formControlName="category"
+          matInput
+          placeholder="Select medicine category"
+          name="category"
+          required
+        >
+          <mat-option *ngFor="let category of categories" [value]="category.id">{{
+            category.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Unit Price</mat-label>
+        <input
+          formControlName="price"
+          matInput
+          placeholder="Enter medicine unit price"
+          name="price"
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Total Quantity</mat-label>
+        <input
+          formControlName="totalQ"
+          matInput
+          placeholder="Enter medicine total quantity"
+          name="totalQ"
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Available Quantity</mat-label>
+        <input
+          formControlName="availableQ"
+          matInput
+          placeholder="Enter medicine available quantity"
+          name="availableQ"
+        />
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        class="login-button"
+        [disabled]="medicineFormGroup.invalid"
+      >
+        Save
+      </button>
+      <button mat-raised-button color="primary" class="login-button">
+        Cancel
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
 <app-footer></app-footer>

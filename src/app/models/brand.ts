@@ -3,4 +3,5 @@ export class Brand {
     name!: string;
     code!: string;
     description!: string;
+    pharmacyInfo!: number;
   }

@@ -41,11 +41,14 @@
                 <li class="nav-item" *ngIf="isPharmacyUser">
                   <a class="nav-link" routerLink="/medicine"> Medicine </a>
                 </li>
-                <li class="nav-item" *ngIf="isAdmin">
-                  <a class="nav-link" routerLink="/pharmacy"> Pharmacies </a>
+                <li class="nav-item" *ngIf="!isAdmin">
+                  <a class="nav-link" routerLink="/about"> About </a>
+                </li>
+                <li class="nav-item" *ngIf="!isAdmin">
+                  <a class="nav-link" routerLink="/contact"> Contact </a>
                 </li>
               </ul>
-              <div class="prescription-btn">
+              <div class="prescription-btn" *ngIf="isCustomerUser">
                 <button mat-raised-button color="primary" (click)="onPrescriptionClick()">UPLOAD PRESCRIPTION</button>
               </div>
 

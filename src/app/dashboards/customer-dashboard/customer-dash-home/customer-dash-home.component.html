@@ -1,1 +1,96 @@
-<p>customer-dash-home works!</p>
+<mat-card>
+  <mat-card-content>
+    <mat-form-field class="searchType" [style.width.px]="300">
+      <input matInput [(ngModel)]="searchText" placeholder="Search" />
+    </mat-form-field>
+
+    <mat-form-field [style.width.px]="100">
+      <mat-label>Search Type</mat-label>
+      <mat-select [(ngModel)]="selectedSearchType">
+        <mat-option *ngFor="let type of searchTypes" [value]="type">{{
+          type
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="search()">Search</button>
+  </mat-card-content>
+</mat-card>
+
+<table class="main-table" *ngIf="isMedicine">
+  <thead>
+    <tr>
+      <th>CODE</th>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>UNIT PRICE</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medicine of medicines">
+      <td>{{ medicine["code"] }}</td>
+      <td>{{ medicine["name"] }}</td>
+      <td>{{ medicine["description"] }}</td>
+      <td>{{ medicine["unitPrice"] }}</td>
+      <td>
+        <img
+          src="../../assets/icons/more-info2.png"
+          matTooltip="more-info"
+          alt="more-info"
+          width="25px"
+          height="25px"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="totalCount == 0" class="noDataMsg">No Data Available</div>
+<mat-paginator
+  *ngIf="isMedicine"
+  [length]="totalCount"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]"
+  showFirstLastButtons
+  (page)="onPageChange($event)"
+></mat-paginator>
+
+<table class="main-table" *ngIf="isPharmacy">
+  <thead>
+    <tr>
+      <th>REG NO</th>
+      <th>NAME</th>
+      <th>ADDRESS</th>
+      <th>CITY</th>
+      <th>EMAIL</th>
+      <th>CONTACT NO</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pharmacy of pharmacies">
+      <td>{{ pharmacy["regNo"] }}</td>
+      <td>{{ pharmacy["name"] }}</td>
+      <td>{{ pharmacy["addressLine1"] }} {{ pharmacy["addressLine2"] }}</td>
+      <td>{{ pharmacy["city"] }}</td>
+      <td>{{ pharmacy["email"] }}</td>
+      <td>{{ pharmacy["contactNo"] }}</td>
+      <td>
+        <img
+          src="../../assets/icons/more-info2.png"
+          matTooltip="more-info"
+          alt="more-info"
+          width="25px"
+          height="25px"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="totalCount == 0" class="noDataMsg">No Data Available</div>
+<mat-paginator
+  *ngIf="isPharmacy"
+  [length]="totalCount"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]"
+  showFirstLastButtons
+  (page)="onPageChange($event)"
+></mat-paginator>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-medicine-thumbnail',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicineThumbnailComponent implements OnInit {
 
-  public medicineName:string = "Medicine";
+  @Input('medicineName') medicineName!:string;
+    @Input('medicinePrice') medicinePrice!:number;
 
   constructor() { }
 

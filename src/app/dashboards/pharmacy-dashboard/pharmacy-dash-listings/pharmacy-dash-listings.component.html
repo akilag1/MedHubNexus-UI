@@ -1,6 +1,7 @@
 
 <div>
     <button
+      *ngIf="!isPharmacyUser"
       mat-raised-button
       color="primary"
       class="addBtn"
@@ -14,7 +15,7 @@
           <th>CODE</th>
           <th>NAME</th>
           <th>DESCRIPTION</th>
-          <th>ACTIONS</th>
+          <th *ngIf="!isPharmacyUser">ACTIONS</th>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +23,7 @@
           <td>{{ category["code"] }}</td>
           <td>{{ category["name"] }}</td>
           <td>{{ category["description"] }}</td>
-          <td>
+          <td *ngIf="!isPharmacyUser">
             <img
               src="../../assets/icons/more-info2.png"
               matTooltip="more-info"
